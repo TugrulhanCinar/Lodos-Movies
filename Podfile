@@ -6,5 +6,8 @@ target 'Lodos Movies' do
   use_frameworks!
 
   # Pods for Lodos Movies
+pod 'FirebaseAnalytics'
+pod 'Firebase/Core'
+pod 'Firebase/RemoteConfig'
 
 end
