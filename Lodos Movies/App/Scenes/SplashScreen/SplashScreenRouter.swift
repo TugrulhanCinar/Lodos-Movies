@@ -26,12 +26,11 @@ class SplashScreenRouter: SplashScreenRoutingLogic, SplashScreenDataPassing {
                 var viewControllers = navigationController.viewControllers
                 viewControllers.removeLast() // Bu adım opsiyonel, eğer mevcut VC'yi stack'de tutmak istemiyorsanız kullanın.
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainVC = storyboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+                let mainVC = ViewControllers.mainPage.getViewcontrollers() as! MainPageViewController
                 
                 let newViewController = MainPageViewController()
                 viewControllers.append(mainVC)
-                navigationController.setViewControllers(viewControllers, animated: true)
+                navigationController.setViewControllers(viewControllers, animated: false)
             }
         }
        

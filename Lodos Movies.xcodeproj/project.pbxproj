@@ -28,7 +28,8 @@
 		56B15DBC2BA2208F00FCDFFE /* MainPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB62BA2208F00FCDFFE /* MainPageModels.swift */; };
 		56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB72BA2208F00FCDFFE /* MainPageViewController.swift */; };
 		56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB82BA2208F00FCDFFE /* MainPageInteractor.swift */; };
-		56B15DC22BA2254A00FCDFFE /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC12BA2254A00FCDFFE /* UIStoryboardSegue.swift */; };
+		56B15DC22BA2254A00FCDFFE /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC12BA2254A00FCDFFE /* Storyboards.swift */; };
+		56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */; };
 		BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +57,8 @@
 		56B15DB62BA2208F00FCDFFE /* MainPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModels.swift; sourceTree = "<group>"; };
 		56B15DB72BA2208F00FCDFFE /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		56B15DB82BA2208F00FCDFFE /* MainPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageInteractor.swift; sourceTree = "<group>"; };
-		56B15DC12BA2254A00FCDFFE /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
+		56B15DC12BA2254A00FCDFFE /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		A2692542BC9D5534C05A5080 /* Pods-Lodos Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.release.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.release.xcconfig"; sourceTree = "<group>"; };
 		B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodos_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B432653F634D9B6DE5997AA1 /* Pods-Lodos Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.debug.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,17 +207,26 @@
 		56B15DBF2BA2252800FCDFFE /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				56B15DC02BA2252F00FCDFFE /* UIStoryboard */,
+				56B15DC32BA231C900FCDFFE /* ViewControllers */,
+				56B15DC02BA2252F00FCDFFE /* Storyboards */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		56B15DC02BA2252F00FCDFFE /* UIStoryboard */ = {
+		56B15DC02BA2252F00FCDFFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				56B15DC12BA2254A00FCDFFE /* UIStoryboardSegue.swift */,
+				56B15DC12BA2254A00FCDFFE /* Storyboards.swift */,
 			);
-			path = UIStoryboard;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		56B15DC32BA231C900FCDFFE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B6D0DEF159FDFD6F07CAB6CA /* Frameworks */ = {
@@ -351,7 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B15DC22BA2254A00FCDFFE /* UIStoryboardSegue.swift in Sources */,
+				56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */,
+				56B15DC22BA2254A00FCDFFE /* Storyboards.swift in Sources */,
 				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
