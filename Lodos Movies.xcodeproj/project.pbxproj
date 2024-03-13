@@ -22,6 +22,13 @@
 		56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15D7C2BA1FE4800FCDFFE /* SplashScreenViewController.swift */; };
 		56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15D7D2BA1FE4800FCDFFE /* SplashScreenInteractor.swift */; };
 		56B15DA32BA20C3A00FCDFFE /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */; };
+		56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB32BA2208F00FCDFFE /* MainPagePresenter.swift */; };
+		56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB42BA2208F00FCDFFE /* MainPageWorker.swift */; };
+		56B15DBB2BA2208F00FCDFFE /* MainPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB52BA2208F00FCDFFE /* MainPageRouter.swift */; };
+		56B15DBC2BA2208F00FCDFFE /* MainPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB62BA2208F00FCDFFE /* MainPageModels.swift */; };
+		56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB72BA2208F00FCDFFE /* MainPageViewController.swift */; };
+		56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DB82BA2208F00FCDFFE /* MainPageInteractor.swift */; };
+		56B15DC22BA2254A00FCDFFE /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC12BA2254A00FCDFFE /* UIStoryboardSegue.swift */; };
 		BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +50,13 @@
 		56B15D7C2BA1FE4800FCDFFE /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		56B15D7D2BA1FE4800FCDFFE /* SplashScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractor.swift; sourceTree = "<group>"; };
 		56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		56B15DB32BA2208F00FCDFFE /* MainPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePresenter.swift; sourceTree = "<group>"; };
+		56B15DB42BA2208F00FCDFFE /* MainPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageWorker.swift; sourceTree = "<group>"; };
+		56B15DB52BA2208F00FCDFFE /* MainPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageRouter.swift; sourceTree = "<group>"; };
+		56B15DB62BA2208F00FCDFFE /* MainPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModels.swift; sourceTree = "<group>"; };
+		56B15DB72BA2208F00FCDFFE /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		56B15DB82BA2208F00FCDFFE /* MainPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageInteractor.swift; sourceTree = "<group>"; };
+		56B15DC12BA2254A00FCDFFE /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		A2692542BC9D5534C05A5080 /* Pods-Lodos Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.release.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.release.xcconfig"; sourceTree = "<group>"; };
 		B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodos_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B432653F634D9B6DE5997AA1 /* Pods-Lodos Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.debug.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +111,7 @@
 		56B15D082BA1FA3C00FCDFFE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				56B15DB22BA21F2100FCDFFE /* MainPage */,
 				56B15D772BA1FE1100FCDFFE /* SplashScreen */,
 			);
 			path = Scenes;
@@ -105,6 +120,7 @@
 		56B15D162BA1FB5800FCDFFE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				56B15DBF2BA2252800FCDFFE /* Enum */,
 				56B15DA02BA20C2600FCDFFE /* Foundation */,
 				56B15D172BA1FB6800FCDFFE /* View */,
 			);
@@ -171,6 +187,35 @@
 				56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		56B15DB22BA21F2100FCDFFE /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				56B15DB32BA2208F00FCDFFE /* MainPagePresenter.swift */,
+				56B15DB42BA2208F00FCDFFE /* MainPageWorker.swift */,
+				56B15DB52BA2208F00FCDFFE /* MainPageRouter.swift */,
+				56B15DB62BA2208F00FCDFFE /* MainPageModels.swift */,
+				56B15DB72BA2208F00FCDFFE /* MainPageViewController.swift */,
+				56B15DB82BA2208F00FCDFFE /* MainPageInteractor.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		56B15DBF2BA2252800FCDFFE /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				56B15DC02BA2252F00FCDFFE /* UIStoryboard */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		56B15DC02BA2252F00FCDFFE /* UIStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				56B15DC12BA2254A00FCDFFE /* UIStoryboardSegue.swift */,
+			);
+			path = UIStoryboard;
 			sourceTree = "<group>";
 		};
 		B6D0DEF159FDFD6F07CAB6CA /* Frameworks */ = {
@@ -306,16 +351,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B15DC22BA2254A00FCDFFE /* UIStoryboardSegue.swift in Sources */,
+				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
 				568DE58F2BA0E619006FF777 /* ViewController.swift in Sources */,
 				56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */,
+				56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */,
 				56B15DA32BA20C3A00FCDFFE /* NetworkHelper.swift in Sources */,
 				56B15D812BA1FE4800FCDFFE /* SplashScreenModels.swift in Sources */,
+				56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */,
 				56B15D7F2BA1FE4800FCDFFE /* SplashScreenWorker.swift in Sources */,
 				568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */,
+				56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */,
 				56B15D1A2BA1FB8400FCDFFE /* BaseViewController.swift in Sources */,
 				56B15D802BA1FE4800FCDFFE /* SplashScreenRouter.swift in Sources */,
+				56B15DBC2BA2208F00FCDFFE /* MainPageModels.swift in Sources */,
+				56B15DBB2BA2208F00FCDFFE /* MainPageRouter.swift in Sources */,
 				568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

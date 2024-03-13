@@ -15,13 +15,12 @@ import UIKit
 protocol SplashScreenPresentationLogic {
     func presentInitializeResult(response: SplashScreen.Initialize.Response)
     func presentReloadResult(response: SplashScreen.Reload.Response)
-    func presentFinalizeResult(response: SplashScreen.Finalize.Response)}
+    func presentFinalizeResult(response: SplashScreen.Finalize.Response)
+}
 
 class SplashScreenPresenter: SplashScreenPresentationLogic {
     
     weak var viewController: SplashScreenDisplayLogic?
-
-    // MARK: VIP Protocols
 
 }
 // MARK: - Presentation Logic

@@ -23,15 +23,22 @@ protocol SplashScreenDataStore {
 
 class SplashScreenInteractor: SplashScreenBusinessLogic, SplashScreenDataStore {
     var presenter: SplashScreenPresentationLogic?
-    var worker: SplashScreenWorker?
+    var worker: SplashScreenWorker
+    
+    init() {
+        
+        worker = SplashScreenWorker()
+    }
 }
+
+// MARK: - Display Logic
 
 extension SplashScreenInteractor {
 
     func initialize(request: SplashScreen.Initialize.Request) {
 
         
-        presenter?.presentInitializeResult(response: SplashScreen.Initialize.Response(isConnection: worker?.checkConnection() ?? false))
+        presenter?.presentInitializeResult(response: SplashScreen.Initialize.Response(isConnection: worker.checkConnection()))
     }
 
     func reload(request: SplashScreen.Reload.Request) {

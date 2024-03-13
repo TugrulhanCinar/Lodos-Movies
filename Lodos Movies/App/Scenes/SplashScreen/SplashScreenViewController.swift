@@ -21,10 +21,10 @@ protocol SplashScreenDisplayLogic: AnyObject {
 class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
     
     var interactor: SplashScreenBusinessLogic?
-    var router: (NSObjectProtocol & SplashScreenRoutingLogic & SplashScreenDataPassing)?
-
+    var router: SplashScreenRoutingLogic?
+    
     // MARK: - View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -33,7 +33,7 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
     }
     
     // MARK: - Setup Clean Code Design Pattern
-
+    
     private func setup() {
         let viewController = self
         let interactor = SplashScreenInteractor()
@@ -46,18 +46,7 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
         router.viewController = viewController
         router.dataStore = interactor
     }
-
-    // MARK: - Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-                }
-            }
-        }
-    }
+}
     
     // MARK: - Display Logic
 
@@ -66,9 +55,9 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
         func displayInitializeResult(viewModel: SplashScreen.Initialize.ViewModel) { 
             
             if viewModel.isConnection {
-                
+                router?.routeToMainPage()
             } else {
-                
+                showAlertMessage(title: "Internet connection", message: "You do not have an internet connection, connect to the internet to enter the application")
             }
         }
 

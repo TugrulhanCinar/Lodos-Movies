@@ -20,6 +20,7 @@ class NetworkHelper {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
             try reachability?.startNotifier()
+            chechNotification()
         } catch {
             print("Could not start reachability notifier")
         }
@@ -28,14 +29,20 @@ class NetworkHelper {
     @objc func reachabilityChanged(note: Notification) {
 
       let reachability = note.object as! Reachability
-
-      switch reachability.connection {
-      case .wifi, .cellular:
-          isConnected = true
-      case .unavailable, .none:
-        isConnected = false
-      }
-        
+        chechNotification()
     }
 
+    private func chechNotification() {
+        
+        guard let reachability = reachability else {
+            print("chechNotification can not finished")
+            return
+        }
+        switch reachability.connection {
+        case .wifi, .cellular:
+            isConnected = true
+        case .unavailable, .none:
+          isConnected = false
+        }
+    }
 }
