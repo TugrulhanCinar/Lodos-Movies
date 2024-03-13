@@ -21,7 +21,7 @@ class SplashScreenRouter: SplashScreenRoutingLogic, SplashScreenDataPassing {
     var dataStore: SplashScreenDataStore?
     
     func routeToMainPage() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             if let navigationController = self.viewController?.navigationController {
                 var viewControllers = navigationController.viewControllers
                 viewControllers.removeLast() // Bu adım opsiyonel, eğer mevcut VC'yi stack'de tutmak istemiyorsanız kullanın.
