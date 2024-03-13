@@ -23,13 +23,16 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
     var interactor: SplashScreenBusinessLogic?
     var router: SplashScreenRoutingLogic?
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var labelWelcomeText: UILabel!
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         interactor?.initialize(request: SplashScreen.Initialize.Request())
-        interactor?.reload(request: SplashScreen.Reload.Request())
     }
     
     // MARK: - Setup Clean Code Design Pattern
@@ -55,13 +58,19 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
         func displayInitializeResult(viewModel: SplashScreen.Initialize.ViewModel) { 
             
             if viewModel.isConnection {
-                router?.routeToMainPage()
+                interactor?.reload(request: SplashScreen.Reload.Request())
             } else {
                 showAlertMessage(title: "Internet connection", message: "You do not have an internet connection, connect to the internet to enter the application")
             }
         }
 
-        func displayReloadResult(viewModel: SplashScreen.Reload.ViewModel) { }
+        func displayReloadResult(viewModel: SplashScreen.Reload.ViewModel) { 
+            
+            DispatchQueue.main.sync {
+                labelWelcomeText.text = viewModel.welcomeText
+                router?.routeToMainPage()
+            }
+        }
 
         func displayFinalizeResult(viewModel: SplashScreen.Finalize.ViewModel) { }
     }

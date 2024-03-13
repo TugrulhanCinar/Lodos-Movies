@@ -34,7 +34,7 @@ extension SplashScreenPresenter {
 
     func presentReloadResult(response: SplashScreen.Reload.Response) {
 
-        viewController?.displayReloadResult(viewModel: SplashScreen.Reload.ViewModel())
+        viewController?.displayReloadResult(viewModel: SplashScreen.Reload.ViewModel(welcomeText: response.welcomeText))
     }
 
     func presentFinalizeResult(response: SplashScreen.Finalize.Response) {

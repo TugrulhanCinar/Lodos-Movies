@@ -31,9 +31,13 @@ enum SplashScreen {
 
         struct Request { }
 
-        struct Response { }
+        struct Response { 
+            var welcomeText: String?
+        }
 
-        struct ViewModel { }
+        struct ViewModel { 
+            var welcomeText: String?
+        }
     }
 
     enum Finalize {

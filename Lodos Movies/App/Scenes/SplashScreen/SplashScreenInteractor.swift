@@ -38,12 +38,18 @@ extension SplashScreenInteractor {
     func initialize(request: SplashScreen.Initialize.Request) {
 
         
-        presenter?.presentInitializeResult(response: SplashScreen.Initialize.Response(isConnection: worker.checkConnection()))
+        presenter?.presentInitializeResult(
+            response: SplashScreen.Initialize.Response(
+                isConnection: worker.checkConnection()
+            )
+        )
     }
 
     func reload(request: SplashScreen.Reload.Request) {
 
-        presenter?.presentReloadResult(response: SplashScreen.Reload.Response())
+        worker.fetchWelcomeText { welcomeText in
+            self.presenter?.presentReloadResult(response: SplashScreen.Reload.Response(welcomeText: welcomeText))
+        }
     }
 
     func finalize(request: SplashScreen.Finalize.Request) {
