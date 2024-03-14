@@ -9,4 +9,18 @@ import UIKit
 
 class BaseTableViewCell: UITableViewCell {
     
+    override func awakeFromNib() {
+
+        super.awakeFromNib()
+        applyStyling()
+        applyTranslation()
+    }
+
+    /// When the screen is rotated
+    func applyTranslation() { }
+
+    func applyStyling() {
+        
+        selectionStyle = .none
+    }
 }

@@ -55,6 +55,11 @@ class MovieTableViewCell: BaseTableViewCell {
         
     }
     
+    override class func awakeFromNib() {
+        
+        super.awakeFromNib()
+    }
+    
     private func setImage(imagePath: String){
 
         guard let url = URL(string: imagePath) else {

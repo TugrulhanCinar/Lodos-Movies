@@ -30,10 +30,13 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     
     // MARK: - Variables
     
-    private var search: [Search] = []
+    private var search: [Search] = [
+        Search(title: "tilte", year: "1032", imdbID: "sadsaffsad", type: "asdffsadasf", poster: "https://m.media-amazon.com/images/M/MV5BMjYzOTQ4NzItYTliMS00Nzc1LWEzNTctMDY5MGU5YWMxNmYxXkEyXkFqcGdeQXVyMTEzNDczNjY3._V1_SX300.jpg")
+    ]
     
     // MARK: Outlets
     
+    @IBOutlet weak var searchBarMovie: UISearchBar!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewMovies: UITableView!
     
@@ -42,8 +45,7 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        tableViewMovies.dataSource = self
-        tableViewMovies.delegate = self
+        registerTableView()
     }
     
     // MARK: - Setup
@@ -61,17 +63,24 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
         router.dataStore = interactor
     }
 
+    private func registerTableView() {
+        
+        tableViewMovies.dataSource = self
+        tableViewMovies.delegate = self
+        let nib = UINib(nibName: "MovieTableViewCell", bundle: Bundle(for: MainPageViewController.self))
+        tableViewMovies.register(nib, forCellReuseIdentifier: "MovieTableViewCell")
+    }
 
 }
 
 // MARK: - Display Logic
 
 extension MainPageViewController {
-    func displayInitializeResult(viewModel: MainPage.Initialize.ViewModel) {
-            
-    }
+    
+    func displayInitializeResult(viewModel: MainPage.Initialize.ViewModel) { }
     
     func displaySearchResult(viewModel: MainPage.Search.ViewModel) {
+     
         
     }
     
@@ -88,10 +97,31 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let movide = search[safe: indexPath.row] {
-            
+        if let movie = search[safe: indexPath.row] {
+            let movieCell = tableViewMovies.dequeueReusableCell(withIdentifier: "MovieTableViewCell") as! MovieTableViewCell
+            let moviePresentation = MovieTableViewCellPresentation(id: movie.imdbID, title: movie.title, imageUrl: movie.poster)
+            movieCell.presentation = moviePresentation
+            movieCell.delegate = self
+            return movieCell
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 250
+    }
+    
+}
+
+// MARK: - MovieTableViewCellDelegate
+
+extension MainPageViewController: MovieTableViewCellDelegate {
+    
+    func movieSection(_ sender: MovieTableViewCell, section: String) {
+        
+        // TODO: Add on tap a cell
+    }
+    
     
 }
