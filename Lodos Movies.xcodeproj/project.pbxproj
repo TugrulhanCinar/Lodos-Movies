@@ -126,7 +126,6 @@
 		56B15D162BA1FB5800FCDFFE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				56B15DC62BA235F100FCDFFE /* Helper */,
 				56B15DBF2BA2252800FCDFFE /* Enum */,
 				56B15DA02BA20C2600FCDFFE /* Foundation */,
 				56B15D172BA1FB6800FCDFFE /* View */,
@@ -191,6 +190,7 @@
 		56B15DA12BA20C2D00FCDFFE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */,
 				56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */,
 			);
 			path = Helper;
@@ -233,22 +233,6 @@
 				56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		56B15DC62BA235F100FCDFFE /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				56B15DC72BA235F600FCDFFE /* RemoteControl */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		56B15DC72BA235F600FCDFFE /* RemoteControl */ = {
-			isa = PBXGroup;
-			children = (
-				56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */,
-			);
-			path = RemoteControl;
 			sourceTree = "<group>";
 		};
 		56B15DCA2BA2384600FCDFFE /* FirebaseRemote */ = {

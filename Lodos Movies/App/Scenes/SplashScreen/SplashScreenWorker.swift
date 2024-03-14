@@ -17,8 +17,12 @@ class SplashScreenWorker {
     
     func fetchWelcomeText(completionHandler: @escaping (String?) -> Void) {
         
-        FirebaseRemoteControlHelper.shared.fetchValues { txt in
-            completionHandler(txt)
+        if let welcomeText = FirebaseRemoteControlHelper.shared.welcomeText {
+            completionHandler(welcomeText)
+        } else {
+            FirebaseRemoteControlHelper.shared.fetchValues { txt in
+                completionHandler(txt)
+            }
         }
     }
 }
