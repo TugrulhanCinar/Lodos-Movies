@@ -14,8 +14,7 @@ import UIKit
 
 protocol MainPageBusinessLogic {
     func initialize(request: MainPage.Initialize.Request)
-    func reload(request: MainPage.Reload.Request)
-    func finalize(request: MainPage.Finalize.Request)
+    func search(request: MainPage.Search.Request)
 }
 
 protocol MainPageDataStore {
@@ -39,11 +38,8 @@ extension MainPageInteractor {
         
     }
     
-    func reload(request: MainPage.Reload.Request) {
+    func search(request: MainPage.Search.Request) {
         
     }
-    
-    func finalize(request: MainPage.Finalize.Request) {
-        
-    }
+
 }

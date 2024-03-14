@@ -14,8 +14,8 @@ import UIKit
 
 protocol MainPagePresentationLogic {
     func presentInitializeResult(response: MainPage.Initialize.Response)
-    func presentReloadResult(response: MainPage.Reload.Response)
-    func presentFinalizeResult(response: MainPage.Finalize.Response)}
+    func presentSearchResult(response: MainPage.Search.Response)
+}
 
 class MainPagePresenter: MainPagePresentationLogic {
     weak var viewController: MainPageDisplayLogic?
@@ -30,13 +30,14 @@ extension MainPagePresenter {
         viewController?.displayInitializeResult(viewModel: MainPage.Initialize.ViewModel())
     }
     
-    func presentReloadResult(response: MainPage.Reload.Response) {
+    func presentSearchResult(response: MainPage.Search.Response) {
         
-        viewController?.displayReloadResult(viewModel: MainPage.Reload.ViewModel())
+        viewController?.displaySearchResult(
+            viewModel: MainPage.Search.ViewModel(
+                isCompletedResponse: response.isCompletedResponse,
+                results: response.results
+            )
+        )
     }
-    
-    func presentFinalizeResult(response: MainPage.Finalize.Response) {
-        
-        viewController?.displayFinalizeResult(viewModel: MainPage.Finalize.ViewModel())
-    }
+
 }

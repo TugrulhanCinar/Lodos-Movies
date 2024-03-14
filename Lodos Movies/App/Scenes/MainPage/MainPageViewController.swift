@@ -20,22 +20,33 @@ import UIKit
 protocol MainPageDisplayLogic: AnyObject {
 
     func displayInitializeResult(viewModel: MainPage.Initialize.ViewModel)
-    func displayReloadResult(viewModel: MainPage.Reload.ViewModel)
-    func displayFinalizeResult(viewModel: MainPage.Finalize.ViewModel)
+    func displaySearchResult(viewModel: MainPage.Search.ViewModel)
 }
 
 class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     
     var interactor: MainPageBusinessLogic?
     var router: (NSObjectProtocol & MainPageRoutingLogic & MainPageDataPassing)?
-
+    
+    // MARK: - Variables
+    
+    private var search: [Search] = []
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var tableViewMovies: UITableView!
+    
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        tableViewMovies.dataSource = self
+        tableViewMovies.delegate = self
     }
-    // MARK: - Setup 
+    
+    // MARK: - Setup
 
     private func setup() {
         let viewController = self
@@ -60,11 +71,27 @@ extension MainPageViewController {
             
     }
     
-    func displayReloadResult(viewModel: MainPage.Reload.ViewModel) {
+    func displaySearchResult(viewModel: MainPage.Search.ViewModel) {
         
     }
     
-    func displayFinalizeResult(viewModel: MainPage.Finalize.ViewModel) {
+
+}
+// MARK: - Viewcontroller
+
+extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        return search.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let movide = search[safe: indexPath.row] {
+            
+        }
+        return UITableViewCell()
+    }
+    
 }

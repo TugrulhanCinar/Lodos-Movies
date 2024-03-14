@@ -20,26 +20,6 @@ enum MainPage
 
         struct Request { }
 
-        struct Response {
-        }
-
-        struct ViewModel {
-        }
-    }
-
-    enum Reload {
-
-        struct Request { }
-
-        struct Response { }
-
-        struct ViewModel { }
-    }
-
-    enum Finalize {
-
-        struct Request { }
-
         struct Response { }
 
         struct ViewModel { }
@@ -47,10 +27,18 @@ enum MainPage
     
     enum Search {
 
-        struct Request { }
+        struct Request { 
+            var searchText: String
+        }
 
-        struct Response { }
+        struct Response { 
+            var isCompletedResponse: Bool
+            var results: [MovieResponse]?
+        }
 
-        struct ViewModel { }
+        struct ViewModel {
+            var isCompletedResponse: Bool
+            var results: [MovieResponse]?
+        }
     }
 }

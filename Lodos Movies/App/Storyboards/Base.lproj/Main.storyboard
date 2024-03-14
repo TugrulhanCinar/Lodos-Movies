@@ -53,6 +53,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NLc-Ox-bHE">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b5R-aL-6O9">
                                 <rect key="frame" x="8" y="109" width="377" height="709"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,15 +64,21 @@
                         <viewLayoutGuide key="safeArea" id="Ode-iD-ihV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NLc-Ox-bHE" firstAttribute="centerY" secondItem="BtU-z0-4PE" secondAttribute="centerY" id="5KZ-l5-RXS"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="bottom" secondItem="b5R-aL-6O9" secondAttribute="bottom" id="8Ot-9e-aPt"/>
                             <constraint firstItem="b5R-aL-6O9" firstAttribute="top" secondItem="bOD-PF-Cx7" secondAttribute="bottom" constant="8" id="B31-7N-QEZ"/>
                             <constraint firstItem="bOD-PF-Cx7" firstAttribute="top" secondItem="Ode-iD-ihV" secondAttribute="top" constant="8" id="C8w-xy-nx5"/>
+                            <constraint firstItem="NLc-Ox-bHE" firstAttribute="centerX" secondItem="BtU-z0-4PE" secondAttribute="centerX" id="JMe-jA-WU6"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="trailing" secondItem="bOD-PF-Cx7" secondAttribute="trailing" constant="8" id="VzH-6o-Udu"/>
                             <constraint firstItem="bOD-PF-Cx7" firstAttribute="leading" secondItem="Ode-iD-ihV" secondAttribute="leading" constant="8" id="fFv-rW-JFo"/>
                             <constraint firstItem="b5R-aL-6O9" firstAttribute="leading" secondItem="Ode-iD-ihV" secondAttribute="leading" constant="8" id="jfZ-DO-bMy"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="trailing" secondItem="b5R-aL-6O9" secondAttribute="trailing" constant="8" id="k7B-bh-IaD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicator" destination="NLc-Ox-bHE" id="rHS-RO-iCC"/>
+                        <outlet property="tableViewMovies" destination="b5R-aL-6O9" id="gbm-Gt-gTR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAH-Ql-s4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
