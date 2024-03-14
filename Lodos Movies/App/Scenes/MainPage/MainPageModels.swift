@@ -32,13 +32,13 @@ enum MainPage
         }
 
         struct Response { 
-            var isCompletedResponse: Bool
-            var results: [MovieResponse]?
+            var isContinue: Bool
+            var results: MovieResponse?
         }
 
         struct ViewModel {
-            var isCompletedResponse: Bool
-            var results: [MovieResponse]?
+            var isContinue: Bool
+            var results: MovieResponse?
         }
     }
 }

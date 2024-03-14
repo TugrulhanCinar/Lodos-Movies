@@ -41,6 +41,13 @@
 		56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */; };
 		56DD6C262BA35C55002FCBC0 /* SearchBarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */; };
 		56DD6C2A2BA35E3E002FCBC0 /* TableViewCellEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */; };
+		56DD6C2D2BA36914002FCBC0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56DD6C2C2BA36914002FCBC0 /* Alamofire */; };
+		56DD6C2F2BA36914002FCBC0 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 56DD6C2E2BA36914002FCBC0 /* AlamofireDynamic */; };
+		56DD6C322BA36974002FCBC0 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C312BA36974002FCBC0 /* MovieRepository.swift */; };
+		56DD6C342BA3698C002FCBC0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C332BA3698C002FCBC0 /* Repository.swift */; };
+		56DD6C382BA36A53002FCBC0 /* LoodosMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C372BA36A53002FCBC0 /* LoodosMoviesService.swift */; };
+		56DD6C402BA36E11002FCBC0 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C3F2BA36E11002FCBC0 /* NetworkConstant.swift */; };
+		56DD6C422BA3816E002FCBC0 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C412BA3816E002FCBC0 /* UITableView.swift */; };
 		BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +88,11 @@
 		56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewCell.swift; sourceTree = "<group>"; };
 		56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarTableViewCell.xib; sourceTree = "<group>"; };
 		56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEnum.swift; sourceTree = "<group>"; };
+		56DD6C312BA36974002FCBC0 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		56DD6C332BA3698C002FCBC0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		56DD6C372BA36A53002FCBC0 /* LoodosMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMoviesService.swift; sourceTree = "<group>"; };
+		56DD6C3F2BA36E11002FCBC0 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		56DD6C412BA3816E002FCBC0 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		A2692542BC9D5534C05A5080 /* Pods-Lodos Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.release.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.release.xcconfig"; sourceTree = "<group>"; };
 		B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodos_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B432653F634D9B6DE5997AA1 /* Pods-Lodos Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.debug.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +104,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */,
+				56DD6C2F2BA36914002FCBC0 /* AlamofireDynamic in Frameworks */,
+				56DD6C2D2BA36914002FCBC0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +158,7 @@
 		56B15D162BA1FB5800FCDFFE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C3D2BA36DFD002FCBC0 /* Constant */,
 				56DD6C092BA31562002FCBC0 /* Extension */,
 				56B15DBF2BA2252800FCDFFE /* Enum */,
 				56B15DA02BA20C2600FCDFFE /* Foundation */,
@@ -269,6 +284,8 @@
 		56DD6C052BA3041E002FCBC0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C352BA36A36002FCBC0 /* Service */,
+				56DD6C302BA3694C002FCBC0 /* Repository */,
 				56DD6C062BA30432002FCBC0 /* Models */,
 			);
 			path = Network;
@@ -277,7 +294,7 @@
 		56DD6C062BA30432002FCBC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				56DD6C072BA30453002FCBC0 /* MovieResponse.swift */,
+				56DD6C392BA36A75002FCBC0 /* ResponseModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				56DD6C0A2BA31573002FCBC0 /* CollectionExtensions.swift */,
+				56DD6C412BA3816E002FCBC0 /* UITableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -366,6 +384,47 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		56DD6C302BA3694C002FCBC0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C332BA3698C002FCBC0 /* Repository.swift */,
+				56DD6C312BA36974002FCBC0 /* MovieRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		56DD6C352BA36A36002FCBC0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C372BA36A53002FCBC0 /* LoodosMoviesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		56DD6C392BA36A75002FCBC0 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C072BA30453002FCBC0 /* MovieResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		56DD6C3D2BA36DFD002FCBC0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C3E2BA36E01002FCBC0 /* NetworkConstant */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		56DD6C3E2BA36E01002FCBC0 /* NetworkConstant */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C3F2BA36E11002FCBC0 /* NetworkConstant.swift */,
+			);
+			path = NetworkConstant;
+			sourceTree = "<group>";
+		};
 		B6D0DEF159FDFD6F07CAB6CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +460,10 @@
 			dependencies = (
 			);
 			name = "Lodos Movies";
+			packageProductDependencies = (
+				56DD6C2C2BA36914002FCBC0 /* Alamofire */,
+				56DD6C2E2BA36914002FCBC0 /* AlamofireDynamic */,
+			);
 			productName = "Lodos Movies";
 			productReference = 568DE5872BA0E619006FF777 /* Lodos Movies.app */;
 			productType = "com.apple.product-type.application";
@@ -429,6 +492,9 @@
 				Base,
 			);
 			mainGroup = 568DE57E2BA0E619006FF777;
+			packageReferences = (
+				56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 568DE5882BA0E619006FF777 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -505,9 +571,11 @@
 				56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */,
 				56B15DC22BA2254A00FCDFFE /* Storyboards.swift in Sources */,
 				56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */,
+				56DD6C402BA36E11002FCBC0 /* NetworkConstant.swift in Sources */,
 				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
 				56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */,
+				56DD6C322BA36974002FCBC0 /* MovieRepository.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
 				56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */,
 				56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */,
@@ -517,15 +585,18 @@
 				56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */,
 				56B15D7F2BA1FE4800FCDFFE /* SplashScreenWorker.swift in Sources */,
 				568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */,
+				56DD6C342BA3698C002FCBC0 /* Repository.swift in Sources */,
 				56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */,
 				56B15D1A2BA1FB8400FCDFFE /* BaseViewController.swift in Sources */,
 				56DD6C142BA31B8C002FCBC0 /* BaseTableViewCell.swift in Sources */,
 				56B15D802BA1FE4800FCDFFE /* SplashScreenRouter.swift in Sources */,
+				56DD6C382BA36A53002FCBC0 /* LoodosMoviesService.swift in Sources */,
 				56B15DBC2BA2208F00FCDFFE /* MainPageModels.swift in Sources */,
 				56B15DBB2BA2208F00FCDFFE /* MainPageRouter.swift in Sources */,
 				56DD6C0B2BA31573002FCBC0 /* CollectionExtensions.swift in Sources */,
 				56B15DCC2BA2385900FCDFFE /* FirebaseRemoteKeys.swift in Sources */,
 				568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */,
+				56DD6C422BA3816E002FCBC0 /* UITableView.swift in Sources */,
 				56DD6C172BA31BBE002FCBC0 /* Presentation.swift in Sources */,
 				56DD6C112BA31618002FCBC0 /* MovieTableViewCell.swift in Sources */,
 				56DD6C1B2BA32072002FCBC0 /* LocaleImages.swift in Sources */,
@@ -753,6 +824,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56DD6C2C2BA36914002FCBC0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		56DD6C2E2BA36914002FCBC0 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 568DE57F2BA0E619006FF777 /* Project object */;
 }

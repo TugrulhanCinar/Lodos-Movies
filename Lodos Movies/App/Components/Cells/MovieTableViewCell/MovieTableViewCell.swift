@@ -69,15 +69,13 @@ class MovieTableViewCell: BaseTableViewCell {
         }
         imageViewMovie.image  = nil
         imageViewMovie.isHidden = true
-        indicatorView.isHidden = false
-        indicatorView.startAnimating()
+        indicatorView.unHiddenAndStartAnimation()
 
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if error == nil {
                 guard let unwrappedData = data, let image = UIImage(data: unwrappedData) else { return }
                 DispatchQueue.main.async {
-                    self.indicatorView.stopAnimating()
-                    self.indicatorView.isHidden = true
+                    self.indicatorView.hiddenAndStopAnimation()
                     self.imageViewMovie.isHidden = false
                     self.imageViewMovie.image = image
                 }
@@ -91,5 +89,19 @@ class MovieTableViewCell: BaseTableViewCell {
     private func setBrokenImage() {
         
         imageViewMovie.image = LocaleImage.brokenImage.getUIImage()
+    }
+}
+
+extension UIActivityIndicatorView {
+    
+    func hiddenAndStopAnimation() {
+        
+        self.stopAnimating()
+        self.isHidden = true
+    }
+    func unHiddenAndStartAnimation() {
+        
+        self.startAnimating()
+        self.isHidden = false
     }
 }

@@ -34,7 +34,7 @@ extension MainPagePresenter {
         
         viewController?.displaySearchResult(
             viewModel: MainPage.Search.ViewModel(
-                isCompletedResponse: response.isCompletedResponse,
+                isContinue: response.isContinue,
                 results: response.results
             )
         )

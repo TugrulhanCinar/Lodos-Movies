@@ -34,12 +34,17 @@ class MainPageInteractor: MainPageBusinessLogic, MainPageDataStore {
 // MARK: - Display Logic
 
 extension MainPageInteractor {
+    
     func initialize(request: MainPage.Initialize.Request) {
         
     }
     
     func search(request: MainPage.Search.Request) {
         
+        self.presenter?.presentSearchResult(response: MainPage.Search.Response(isContinue: true))
+        worker?.fetchMovies(text: request.searchText, completion: { movieRepository in
+            self.presenter?.presentSearchResult(response: MainPage.Search.Response(isContinue: false, results: movieRepository))
+        })
     }
 
 }
