@@ -24,7 +24,7 @@ class LoodosMoviesService: MovieService {
     
     func get(url: String, completion: @escaping ResponseClosure) {
         
-        AF.request(url, method: .get).response { response in
+        let a = AF.request(url, method: .get).response { response in
             switch response.result {
             case .success(let data):
                 completion(data, nil)
@@ -32,6 +32,9 @@ class LoodosMoviesService: MovieService {
                 completion(nil, error)
             }
         }
+        
+        
+        _ = a.isResumed ? a.cancel() : a.resume()
     }
     
     func post() { }

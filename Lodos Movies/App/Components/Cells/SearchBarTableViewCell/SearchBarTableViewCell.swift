@@ -20,6 +20,7 @@ class SearchBarTableViewCell: BaseTableViewCell {
     // MARK: Variables
 
     weak var delegate: SearchBarTableViewCellDelegate?
+    private var searchTimer: Timer?
     
     // MARK: Life Cycle
     
@@ -36,6 +37,10 @@ extension SearchBarTableViewCell: UISearchBarDelegate {
         
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        delegate?.textChanged(self, text: searchText)
+        searchTimer?.invalidate()
+        
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            self.delegate?.textChanged(self, text: searchText)
+        })
     }
 }

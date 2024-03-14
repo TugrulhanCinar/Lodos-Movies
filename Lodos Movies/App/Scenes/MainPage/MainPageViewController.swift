@@ -20,7 +20,8 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     // MARK: - Variables
     
     private var search: [Search] = []
-    
+    private var searchTimer: Timer?
+
     // MARK: Outlets
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!

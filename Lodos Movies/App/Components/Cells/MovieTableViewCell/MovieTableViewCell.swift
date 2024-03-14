@@ -56,8 +56,8 @@ class MovieTableViewCell: BaseTableViewCell {
     override func applyStyling() {
         
         super.applyStyling()
-        viewContent.layer.cornerRadius = 12
-        imageViewMovie.layer.cornerRadius = 12
+        viewContent.layer.cornerRadius = 15
+        imageViewMovie.layer.cornerRadius = 15
     }
     
     private func setImage(imagePath: String){
@@ -99,6 +99,7 @@ extension UIActivityIndicatorView {
         self.stopAnimating()
         self.isHidden = true
     }
+    
     func unHiddenAndStartAnimation() {
         
         self.startAnimating()
