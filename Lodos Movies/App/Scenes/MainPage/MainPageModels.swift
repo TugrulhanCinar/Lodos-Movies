@@ -44,4 +44,13 @@ enum MainPage
 
         struct ViewModel { }
     }
+    
+    enum Search {
+
+        struct Request { }
+
+        struct Response { }
+
+        struct ViewModel { }
+    }
 }

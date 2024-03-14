@@ -10,7 +10,6 @@
 		5630451E2BA1A9B300ABCD00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */; };
 		568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58A2BA0E619006FF777 /* AppDelegate.swift */; };
 		568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58C2BA0E619006FF777 /* SceneDelegate.swift */; };
-		568DE58F2BA0E619006FF777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58E2BA0E619006FF777 /* ViewController.swift */; };
 		568DE5922BA0E619006FF777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568DE5902BA0E619006FF777 /* Main.storyboard */; };
 		568DE5942BA0E61B006FF777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568DE5932BA0E61B006FF777 /* Assets.xcassets */; };
 		568DE5972BA0E61B006FF777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568DE5952BA0E61B006FF777 /* LaunchScreen.storyboard */; };
@@ -32,6 +31,7 @@
 		56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */; };
 		56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */; };
 		56B15DCC2BA2385900FCDFFE /* FirebaseRemoteKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DCB2BA2385900FCDFFE /* FirebaseRemoteKeys.swift */; };
+		56DD6C082BA30453002FCBC0 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C072BA30453002FCBC0 /* MovieResponse.swift */; };
 		BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,6 @@
 		568DE5872BA0E619006FF777 /* Lodos Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lodos Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568DE58A2BA0E619006FF777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		568DE58C2BA0E619006FF777 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		568DE58E2BA0E619006FF777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		568DE5912BA0E619006FF777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		568DE5932BA0E61B006FF777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		568DE5962BA0E61B006FF777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteControlHelper.swift; sourceTree = "<group>"; };
 		56B15DCB2BA2385900FCDFFE /* FirebaseRemoteKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteKeys.swift; sourceTree = "<group>"; };
+		56DD6C072BA30453002FCBC0 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		A2692542BC9D5534C05A5080 /* Pods-Lodos Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.release.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.release.xcconfig"; sourceTree = "<group>"; };
 		B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodos_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B432653F634D9B6DE5997AA1 /* Pods-Lodos Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.debug.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,11 +101,11 @@
 		568DE5892BA0E619006FF777 /* Lodos Movies */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C052BA3041E002FCBC0 /* Network */,
 				56B15D842BA2046000FCDFFE /* App */,
 				56B15D162BA1FB5800FCDFFE /* Utilities */,
 				568DE58A2BA0E619006FF777 /* AppDelegate.swift */,
 				568DE58C2BA0E619006FF777 /* SceneDelegate.swift */,
-				568DE58E2BA0E619006FF777 /* ViewController.swift */,
 				568DE5932BA0E61B006FF777 /* Assets.xcassets */,
 				568DE5952BA0E61B006FF777 /* LaunchScreen.storyboard */,
 				5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */,
@@ -243,6 +243,22 @@
 			path = FirebaseRemote;
 			sourceTree = "<group>";
 		};
+		56DD6C052BA3041E002FCBC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C062BA30432002FCBC0 /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		56DD6C062BA30432002FCBC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C072BA30453002FCBC0 /* MovieResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B6D0DEF159FDFD6F07CAB6CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,13 +392,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DD6C082BA30453002FCBC0 /* MovieResponse.swift in Sources */,
 				56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */,
 				56B15DC22BA2254A00FCDFFE /* Storyboards.swift in Sources */,
 				56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */,
 				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
-				568DE58F2BA0E619006FF777 /* ViewController.swift in Sources */,
 				56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */,
 				56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */,
 				56B15DA32BA20C3A00FCDFFE /* NetworkHelper.swift in Sources */,

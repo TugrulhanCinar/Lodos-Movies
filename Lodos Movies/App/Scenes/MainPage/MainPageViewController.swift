@@ -11,6 +11,11 @@
 //
 
 import UIKit
+// toplu aramak için: https://www.omdbapi.com/?s=God+father&apikey=8217f5d4 // https://www.omdbapi.com/?s={txt}&apikey=8217f5d4
+
+// title üzerinden tekli aramak için: https://www.omdbapi.com/?t=God+father+&apikey=8217f5d4 // https://www.omdbapi.com/?t={txt}&apikey=8217f5d4
+
+// id üzerinden aratmak için = http://www.omdbapi.com/?i=tt12994556&apikey=8217f5d4
 
 protocol MainPageDisplayLogic: AnyObject {
 
@@ -28,9 +33,9 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        doSomethingElse()
+
     }
-    // MARK: - Setup Clean Code Design Pattern
+    // MARK: - Setup 
 
     private func setup() {
         let viewController = self
