@@ -34,7 +34,6 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     
     // MARK: Outlets
     
-    @IBOutlet weak var searchBarMovie: UISearchBar!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewMovies: UITableView!
     
@@ -65,8 +64,12 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
         
         tableViewMovies.dataSource = self
         tableViewMovies.delegate = self
-        let nib = UINib(nibName: "MovieTableViewCell", bundle: Bundle(for: MainPageViewController.self))
-        tableViewMovies.register(nib, forCellReuseIdentifier: "MovieTableViewCell")
+        
+        let movieCell = UINib(nibName: TableViewCellEnum.movieCell.rawValue, bundle: Bundle(for: MainPageViewController.self))
+        let searchCell = UINib(nibName: TableViewCellEnum.searchCell.rawValue, bundle: Bundle(for: SearchBarTableViewCell.self))
+        
+        tableViewMovies.register(movieCell, forCellReuseIdentifier: TableViewCellEnum.movieCell.rawValue)
+        tableViewMovies.register(searchCell, forCellReuseIdentifier: TableViewCellEnum.searchCell.rawValue)
     }
 
 }
@@ -77,12 +80,7 @@ extension MainPageViewController {
     
     func displayInitializeResult(viewModel: MainPage.Initialize.ViewModel) { }
     
-    func displaySearchResult(viewModel: MainPage.Search.ViewModel) {
-     
-        
-    }
-    
-
+    func displaySearchResult(viewModel: MainPage.Search.ViewModel) { }
 }
 // MARK: - Viewcontroller
 
@@ -90,24 +88,31 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return search.count
+        return search.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let movie = search[safe: indexPath.row] {
-            let movieCell = tableViewMovies.dequeueReusableCell(withIdentifier: "MovieTableViewCell") as! MovieTableViewCell
-            let moviePresentation = MovieTableViewCellPresentation(id: movie.imdbID, title: movie.title, imageUrl: movie.poster)
-            movieCell.presentation = moviePresentation
-            movieCell.delegate = self
-            return movieCell
+        if indexPath.row == 0 {
+            let searchCell = tableViewMovies.dequeueReusableCell(withIdentifier: TableViewCellEnum.searchCell.rawValue) as! SearchBarTableViewCell
+            searchCell.delegate = self
+            return searchCell
+        } else {
+            if let movie = search[safe: indexPath.row - 1] {
+                let movieCell = tableViewMovies.dequeueReusableCell(withIdentifier: TableViewCellEnum.movieCell.rawValue) as! MovieTableViewCell
+                let moviePresentation = MovieTableViewCellPresentation(id: movie.imdbID, imageUrl: movie.poster)
+                movieCell.presentation = moviePresentation
+                movieCell.delegate = self
+                return movieCell
+            }
         }
+        
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 500
+        return indexPath.row == 0 ? 70 : 500
     }
     
 }
@@ -123,4 +128,16 @@ extension MainPageViewController: MovieTableViewCellDelegate {
     }
     
     
+}
+
+// MARK: - SearchBarTableViewCellDelegate
+
+extension MainPageViewController: SearchBarTableViewCellDelegate {
+    
+    func textChanged(_ sender: SearchBarTableViewCell, text: String?) {
+        
+        if let text = text {
+            interactor?.search(request: MainPage.Search.Request(searchText: text))
+        }
+    }
 }

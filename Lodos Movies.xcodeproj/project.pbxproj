@@ -38,6 +38,9 @@
 		56DD6C142BA31B8C002FCBC0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C132BA31B8C002FCBC0 /* BaseTableViewCell.swift */; };
 		56DD6C172BA31BBE002FCBC0 /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C162BA31BBE002FCBC0 /* Presentation.swift */; };
 		56DD6C1B2BA32072002FCBC0 /* LocaleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C1A2BA32072002FCBC0 /* LocaleImages.swift */; };
+		56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */; };
+		56DD6C262BA35C55002FCBC0 /* SearchBarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */; };
+		56DD6C2A2BA35E3E002FCBC0 /* TableViewCellEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */; };
 		BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		56DD6C132BA31B8C002FCBC0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		56DD6C162BA31BBE002FCBC0 /* Presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
 		56DD6C1A2BA32072002FCBC0 /* LocaleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleImages.swift; sourceTree = "<group>"; };
+		56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewCell.swift; sourceTree = "<group>"; };
+		56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarTableViewCell.xib; sourceTree = "<group>"; };
+		56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEnum.swift; sourceTree = "<group>"; };
 		A2692542BC9D5534C05A5080 /* Pods-Lodos Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.release.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.release.xcconfig"; sourceTree = "<group>"; };
 		B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodos_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B432653F634D9B6DE5997AA1 /* Pods-Lodos Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.debug.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +301,7 @@
 		56DD6C0D2BA315DA002FCBC0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C222BA35C38002FCBC0 /* SearchBarTableViewCell */,
 				56DD6C0E2BA315E7002FCBC0 /* MovieTableViewCell */,
 			);
 			path = Cells;
@@ -320,6 +327,7 @@
 		56DD6C182BA3205D002FCBC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C272BA35E23002FCBC0 /* Cell */,
 				56DD6C192BA32061002FCBC0 /* UIImage */,
 			);
 			path = View;
@@ -331,6 +339,31 @@
 				56DD6C1A2BA32072002FCBC0 /* LocaleImages.swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		56DD6C222BA35C38002FCBC0 /* SearchBarTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */,
+				56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */,
+			);
+			path = SearchBarTableViewCell;
+			sourceTree = "<group>";
+		};
+		56DD6C272BA35E23002FCBC0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C282BA35E2B002FCBC0 /* TableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		56DD6C282BA35E2B002FCBC0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		B6D0DEF159FDFD6F07CAB6CA /* Frameworks */ = {
@@ -411,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				568DE5972BA0E61B006FF777 /* LaunchScreen.storyboard in Resources */,
+				56DD6C262BA35C55002FCBC0 /* SearchBarTableViewCell.xib in Resources */,
 				56DD6C122BA31618002FCBC0 /* MovieTableViewCell.xib in Resources */,
 				5630451E2BA1A9B300ABCD00 /* GoogleService-Info.plist in Resources */,
 				568DE5942BA0E61B006FF777 /* Assets.xcassets in Resources */,
@@ -473,9 +507,11 @@
 				56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */,
 				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
+				56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
 				56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */,
 				56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */,
+				56DD6C2A2BA35E3E002FCBC0 /* TableViewCellEnum.swift in Sources */,
 				56B15DA32BA20C3A00FCDFFE /* NetworkHelper.swift in Sources */,
 				56B15D812BA1FE4800FCDFFE /* SplashScreenModels.swift in Sources */,
 				56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */,

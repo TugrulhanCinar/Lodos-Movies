@@ -49,35 +49,50 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NLc-Ox-bHE">
                                 <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                             </activityIndicatorView>
-                            <searchBar contentMode="redraw" placeholder="Lütfen istediğiniz filmi arayın" translatesAutoresizingMaskIntoConstraints="NO" id="mb3-cJ-yUD">
-                                <rect key="frame" x="8" y="67" width="377" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ypJ-Oa-qSa" id="ISN-Cw-hy7"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b5R-aL-6O9">
-                                <rect key="frame" x="8" y="123" width="377" height="695"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b5R-aL-6O9">
+                                <rect key="frame" x="8" y="59" width="377" height="759"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qM5-CL-hgG">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qM5-CL-hgG" id="0tq-n1-ZIj">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Tco-PJ-alz">
+                                        <rect key="frame" x="0.0" y="94" width="377" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tco-PJ-alz" id="eMH-fI-Edt">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Tnt-Db-Ooz">
+                                        <rect key="frame" x="0.0" y="138" width="377" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tnt-Db-Ooz" id="SRu-zD-7qr">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ode-iD-ihV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NLc-Ox-bHE" firstAttribute="centerY" secondItem="BtU-z0-4PE" secondAttribute="centerY" id="5KZ-l5-RXS"/>
-                            <constraint firstItem="mb3-cJ-yUD" firstAttribute="top" secondItem="Ode-iD-ihV" secondAttribute="top" constant="8" id="7SI-F6-KhH"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="bottom" secondItem="b5R-aL-6O9" secondAttribute="bottom" id="8Ot-9e-aPt"/>
-                            <constraint firstItem="mb3-cJ-yUD" firstAttribute="leading" secondItem="Ode-iD-ihV" secondAttribute="leading" constant="8" id="AgH-OO-7bQ"/>
                             <constraint firstItem="NLc-Ox-bHE" firstAttribute="centerX" secondItem="BtU-z0-4PE" secondAttribute="centerX" id="JMe-jA-WU6"/>
-                            <constraint firstItem="Ode-iD-ihV" firstAttribute="trailing" secondItem="mb3-cJ-yUD" secondAttribute="trailing" constant="8" id="faw-B3-grz"/>
+                            <constraint firstItem="b5R-aL-6O9" firstAttribute="top" secondItem="Ode-iD-ihV" secondAttribute="top" id="Nen-eA-DsU"/>
                             <constraint firstItem="b5R-aL-6O9" firstAttribute="leading" secondItem="Ode-iD-ihV" secondAttribute="leading" constant="8" id="jfZ-DO-bMy"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="trailing" secondItem="b5R-aL-6O9" secondAttribute="trailing" constant="8" id="k7B-bh-IaD"/>
-                            <constraint firstItem="b5R-aL-6O9" firstAttribute="top" secondItem="mb3-cJ-yUD" secondAttribute="bottom" id="uv2-UF-zkK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="indicator" destination="NLc-Ox-bHE" id="rHS-RO-iCC"/>
-                        <outlet property="searchBarMovie" destination="mb3-cJ-yUD" id="Fg7-yr-oQx"/>
                         <outlet property="tableViewMovies" destination="b5R-aL-6O9" id="gbm-Gt-gTR"/>
                     </connections>
                 </viewController>

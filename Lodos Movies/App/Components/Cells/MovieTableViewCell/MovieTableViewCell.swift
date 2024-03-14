@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MovieTableViewCellDelegate: AnyObject {
-    func movieSection(_ sender: MovieTableViewCell, section : String)
+    func movieSection(_ sender: MovieTableViewCell, section: String)
 }
 
 struct MovieTableViewCellPresentation: Presentation {
@@ -56,8 +56,8 @@ class MovieTableViewCell: BaseTableViewCell {
     override func applyStyling() {
         
         super.applyStyling()
-        viewContent.layer.cornerRadius = 8
-        imageViewMovie.layer.cornerRadius = 8
+        viewContent.layer.cornerRadius = 12
+        imageViewMovie.layer.cornerRadius = 12
     }
     
     private func setImage(imagePath: String){
