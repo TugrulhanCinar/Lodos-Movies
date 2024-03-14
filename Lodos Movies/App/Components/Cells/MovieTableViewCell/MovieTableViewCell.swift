@@ -13,7 +13,6 @@ protocol MovieTableViewCellDelegate: AnyObject {
 
 struct MovieTableViewCellPresentation: Presentation {
     var id: String
-    var title: String?
     var imageUrl: String?
 }
 
@@ -21,8 +20,8 @@ class MovieTableViewCell: BaseTableViewCell {
     
     // MARK: Outlets
     
+    @IBOutlet weak var viewContent: UIView!
     @IBOutlet weak var imageViewMovie: UIImageView!
-    @IBOutlet weak var labelMovieTitle: UILabel!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     // MARK: - Variables
@@ -46,7 +45,6 @@ class MovieTableViewCell: BaseTableViewCell {
     
     private func setupUI() {
         
-        labelMovieTitle.text = presentation?.title
         if let imageUrl = presentation?.imageUrl {
             setImage(imagePath: imageUrl)
         } else {
@@ -55,9 +53,11 @@ class MovieTableViewCell: BaseTableViewCell {
         
     }
     
-    override class func awakeFromNib() {
+    override func applyStyling() {
         
-        super.awakeFromNib()
+        super.applyStyling()
+        viewContent.layer.cornerRadius = 8
+        imageViewMovie.layer.cornerRadius = 8
     }
     
     private func setImage(imagePath: String){

@@ -30,9 +30,7 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     
     // MARK: - Variables
     
-    private var search: [Search] = [
-        Search(title: "tilte", year: "1032", imdbID: "sadsaffsad", type: "asdffsadasf", poster: "https://m.media-amazon.com/images/M/MV5BMjYzOTQ4NzItYTliMS00Nzc1LWEzNTctMDY5MGU5YWMxNmYxXkEyXkFqcGdeQXVyMTEzNDczNjY3._V1_SX300.jpg")
-    ]
+    private var search: [Search] = []
     
     // MARK: Outlets
     
@@ -109,7 +107,7 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 250
+        return 500
     }
     
 }
@@ -121,6 +119,7 @@ extension MainPageViewController: MovieTableViewCellDelegate {
     func movieSection(_ sender: MovieTableViewCell, section: String) {
         
         // TODO: Add on tap a cell
+        print("tapped: \(section)")
     }
     
     
