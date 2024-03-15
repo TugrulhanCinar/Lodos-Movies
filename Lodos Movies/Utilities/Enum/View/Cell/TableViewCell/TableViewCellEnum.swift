@@ -6,7 +6,5 @@
 //
 
 enum TableViewCellEnum: String {
-    case movieCell = "MovieTableViewCell"
-    case searchCell = "SearchBarTableViewCell"
-    
+    case movieCell = "MovieCollectionViewCell"
 }

@@ -8,5 +8,6 @@
 import Foundation
 
 class LodosMoviesRadiusConstants {
+    static var lowCornerRadius: CGFloat = 8
     static var mediumCornerRadius: CGFloat = 15
 }
