@@ -10,7 +10,7 @@ pod 'FirebaseAnalytics'
 pod 'Firebase/Core'
 pod 'Firebase/RemoteConfig'
 pod 'ReachabilitySwift'
-
+pod 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

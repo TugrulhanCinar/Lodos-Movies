@@ -3,8 +3,6 @@
 //  Lodos Movies
 //
 //  Created by Tuğrul on 13.03.2024.
-//  Copyright (c) 2024 ___ORGANIZATIONNAME___. All rights reserved.
-//
 
 import UIKit
 
@@ -17,8 +15,12 @@ class SplashScreenWorker {
     
     func fetchWelcomeText(completionHandler: @escaping (String?) -> Void) {
         
-        FirebaseRemoteControlHelper.shared.fetchValues { txt in
-            completionHandler(txt)
+        if let welcomeText = FirebaseRemoteControlHelper.shared.welcomeText {
+            completionHandler(welcomeText)
+        } else {
+            FirebaseRemoteControlHelper.shared.fetchValues { txt in
+                completionHandler(txt)
+            }
         }
     }
 }

@@ -17,6 +17,8 @@ class FirebaseRemoteControlHelper {
     private let remoteConfig: RemoteConfig
     private let settings: RemoteConfigSettings
     
+    var welcomeText: String?
+    
     private init() {
         
         self.remoteConfig = RemoteConfig.remoteConfig()
@@ -40,10 +42,10 @@ class FirebaseRemoteControlHelper {
                         return
                     }
                     
-                    let value = self.remoteConfig.configValue(forKey: FirebaseRemoteKeys.welcomeText.rawValue).stringValue
+                    self.welcomeText = self.remoteConfig.configValue(forKey: FirebaseRemoteKeys.welcomeText.rawValue).stringValue
                     
-                    print("fetched \(value ?? "no data")")
-                    completionHandler(value)
+                    print("fetched \(self.welcomeText ?? "no data")")
+                    completionHandler(self.welcomeText)
                 }
             } else {
                 print("something went wrong")

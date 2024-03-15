@@ -14,8 +14,7 @@ import UIKit
 
 protocol MainPageBusinessLogic {
     func initialize(request: MainPage.Initialize.Request)
-    func reload(request: MainPage.Reload.Request)
-    func finalize(request: MainPage.Finalize.Request)
+    func search(request: MainPage.Search.Request)
 }
 
 protocol MainPageDataStore {
@@ -35,15 +34,19 @@ class MainPageInteractor: MainPageBusinessLogic, MainPageDataStore {
 // MARK: - Display Logic
 
 extension MainPageInteractor {
+    
     func initialize(request: MainPage.Initialize.Request) {
         
     }
     
-    func reload(request: MainPage.Reload.Request) {
+    func search(request: MainPage.Search.Request) {
+        
+        self.presenter?.presentSearchResult(response: MainPage.Search.Response(isContinue: true))
+        
+        worker?.fetchMovies(text: request.searchText, completion: { movieRepository in
+            self.presenter?.presentSearchResult(response: MainPage.Search.Response(isContinue: false, results: movieRepository))
+        })
         
     }
-    
-    func finalize(request: MainPage.Finalize.Request) {
-        
-    }
+
 }

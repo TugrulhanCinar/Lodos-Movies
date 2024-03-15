@@ -35,7 +35,7 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
         interactor?.initialize(request: SplashScreen.Initialize.Request())
     }
     
-    // MARK: - Setup Clean Code Design Pattern
+    // MARK: - Setup
     
     private func setup() {
         let viewController = self

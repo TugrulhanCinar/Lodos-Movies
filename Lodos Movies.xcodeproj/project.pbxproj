@@ -10,10 +10,10 @@
 		5630451E2BA1A9B300ABCD00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */; };
 		568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58A2BA0E619006FF777 /* AppDelegate.swift */; };
 		568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58C2BA0E619006FF777 /* SceneDelegate.swift */; };
-		568DE58F2BA0E619006FF777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58E2BA0E619006FF777 /* ViewController.swift */; };
 		568DE5922BA0E619006FF777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568DE5902BA0E619006FF777 /* Main.storyboard */; };
 		568DE5942BA0E61B006FF777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568DE5932BA0E61B006FF777 /* Assets.xcassets */; };
 		568DE5972BA0E61B006FF777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568DE5952BA0E61B006FF777 /* LaunchScreen.storyboard */; };
+		56A206262BA3A4C600A1734B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A206252BA3A4C600A1734B /* StringExtension.swift */; };
 		56B15D1A2BA1FB8400FCDFFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15D192BA1FB8400FCDFFE /* BaseViewController.swift */; };
 		56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15D782BA1FE4800FCDFFE /* SplashScreenPresenter.swift */; };
 		56B15D7F2BA1FE4800FCDFFE /* SplashScreenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15D792BA1FE4800FCDFFE /* SplashScreenWorker.swift */; };
@@ -32,6 +32,23 @@
 		56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */; };
 		56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */; };
 		56B15DCC2BA2385900FCDFFE /* FirebaseRemoteKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B15DCB2BA2385900FCDFFE /* FirebaseRemoteKeys.swift */; };
+		56DD6C082BA30453002FCBC0 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C072BA30453002FCBC0 /* MovieResponse.swift */; };
+		56DD6C0B2BA31573002FCBC0 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C0A2BA31573002FCBC0 /* CollectionExtensions.swift */; };
+		56DD6C112BA31618002FCBC0 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C0F2BA31618002FCBC0 /* MovieTableViewCell.swift */; };
+		56DD6C122BA31618002FCBC0 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DD6C102BA31618002FCBC0 /* MovieTableViewCell.xib */; };
+		56DD6C142BA31B8C002FCBC0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C132BA31B8C002FCBC0 /* BaseTableViewCell.swift */; };
+		56DD6C172BA31BBE002FCBC0 /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C162BA31BBE002FCBC0 /* Presentation.swift */; };
+		56DD6C1B2BA32072002FCBC0 /* LocaleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C1A2BA32072002FCBC0 /* LocaleImages.swift */; };
+		56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */; };
+		56DD6C262BA35C55002FCBC0 /* SearchBarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */; };
+		56DD6C2A2BA35E3E002FCBC0 /* TableViewCellEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */; };
+		56DD6C2D2BA36914002FCBC0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56DD6C2C2BA36914002FCBC0 /* Alamofire */; };
+		56DD6C2F2BA36914002FCBC0 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 56DD6C2E2BA36914002FCBC0 /* AlamofireDynamic */; };
+		56DD6C322BA36974002FCBC0 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C312BA36974002FCBC0 /* MovieRepository.swift */; };
+		56DD6C342BA3698C002FCBC0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C332BA3698C002FCBC0 /* Repository.swift */; };
+		56DD6C382BA36A53002FCBC0 /* LoodosMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C372BA36A53002FCBC0 /* LoodosMoviesService.swift */; };
+		56DD6C402BA36E11002FCBC0 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C3F2BA36E11002FCBC0 /* NetworkConstant.swift */; };
+		56DD6C422BA3816E002FCBC0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD6C412BA3816E002FCBC0 /* UITableViewExtension.swift */; };
 		BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,11 +57,11 @@
 		568DE5872BA0E619006FF777 /* Lodos Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lodos Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568DE58A2BA0E619006FF777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		568DE58C2BA0E619006FF777 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		568DE58E2BA0E619006FF777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		568DE5912BA0E619006FF777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		568DE5932BA0E61B006FF777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		568DE5962BA0E61B006FF777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		568DE5982BA0E61B006FF777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A206252BA3A4C600A1734B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		56B15D192BA1FB8400FCDFFE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		56B15D782BA1FE4800FCDFFE /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		56B15D792BA1FE4800FCDFFE /* SplashScreenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenWorker.swift; sourceTree = "<group>"; };
@@ -63,6 +80,21 @@
 		56B15DC42BA231DF00FCDFFE /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteControlHelper.swift; sourceTree = "<group>"; };
 		56B15DCB2BA2385900FCDFFE /* FirebaseRemoteKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteKeys.swift; sourceTree = "<group>"; };
+		56DD6C072BA30453002FCBC0 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		56DD6C0A2BA31573002FCBC0 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		56DD6C0F2BA31618002FCBC0 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		56DD6C102BA31618002FCBC0 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		56DD6C132BA31B8C002FCBC0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		56DD6C162BA31BBE002FCBC0 /* Presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
+		56DD6C1A2BA32072002FCBC0 /* LocaleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleImages.swift; sourceTree = "<group>"; };
+		56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewCell.swift; sourceTree = "<group>"; };
+		56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarTableViewCell.xib; sourceTree = "<group>"; };
+		56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEnum.swift; sourceTree = "<group>"; };
+		56DD6C312BA36974002FCBC0 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		56DD6C332BA3698C002FCBC0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		56DD6C372BA36A53002FCBC0 /* LoodosMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMoviesService.swift; sourceTree = "<group>"; };
+		56DD6C3F2BA36E11002FCBC0 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		56DD6C412BA3816E002FCBC0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		A2692542BC9D5534C05A5080 /* Pods-Lodos Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.release.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.release.xcconfig"; sourceTree = "<group>"; };
 		B379A4B4516E2F2D4C461F95 /* Pods_Lodos_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodos_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B432653F634D9B6DE5997AA1 /* Pods-Lodos Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodos Movies.debug.xcconfig"; path = "Target Support Files/Pods-Lodos Movies/Pods-Lodos Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +106,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB43AFA7D69476E58D30438B /* Pods_Lodos_Movies.framework in Frameworks */,
+				56DD6C2F2BA36914002FCBC0 /* AlamofireDynamic in Frameworks */,
+				56DD6C2D2BA36914002FCBC0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,11 +135,11 @@
 		568DE5892BA0E619006FF777 /* Lodos Movies */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C052BA3041E002FCBC0 /* Network */,
 				56B15D842BA2046000FCDFFE /* App */,
 				56B15D162BA1FB5800FCDFFE /* Utilities */,
 				568DE58A2BA0E619006FF777 /* AppDelegate.swift */,
 				568DE58C2BA0E619006FF777 /* SceneDelegate.swift */,
-				568DE58E2BA0E619006FF777 /* ViewController.swift */,
 				568DE5932BA0E61B006FF777 /* Assets.xcassets */,
 				568DE5952BA0E61B006FF777 /* LaunchScreen.storyboard */,
 				5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */,
@@ -126,7 +160,8 @@
 		56B15D162BA1FB5800FCDFFE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				56B15DC62BA235F100FCDFFE /* Helper */,
+				56DD6C3D2BA36DFD002FCBC0 /* Constant */,
+				56DD6C092BA31562002FCBC0 /* Extension */,
 				56B15DBF2BA2252800FCDFFE /* Enum */,
 				56B15DA02BA20C2600FCDFFE /* Foundation */,
 				56B15D172BA1FB6800FCDFFE /* View */,
@@ -137,6 +172,7 @@
 		56B15D172BA1FB6800FCDFFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C152BA31BAB002FCBC0 /* Presentation */,
 				56B15D182BA1FB6D00FCDFFE /* BaseViews */,
 			);
 			path = View;
@@ -146,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				56B15D192BA1FB8400FCDFFE /* BaseViewController.swift */,
+				56DD6C132BA31B8C002FCBC0 /* BaseTableViewCell.swift */,
 			);
 			path = BaseViews;
 			sourceTree = "<group>";
@@ -166,6 +203,7 @@
 		56B15D842BA2046000FCDFFE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C0C2BA315D3002FCBC0 /* Components */,
 				56B15D852BA2047500FCDFFE /* Storyboards */,
 				56B15D082BA1FA3C00FCDFFE /* Scenes */,
 			);
@@ -191,6 +229,7 @@
 		56B15DA12BA20C2D00FCDFFE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */,
 				56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */,
 			);
 			path = Helper;
@@ -212,6 +251,7 @@
 		56B15DBF2BA2252800FCDFFE /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				56DD6C182BA3205D002FCBC0 /* View */,
 				56B15DCA2BA2384600FCDFFE /* FirebaseRemote */,
 				56B15DC32BA231C900FCDFFE /* ViewControllers */,
 				56B15DC02BA2252F00FCDFFE /* Storyboards */,
@@ -235,28 +275,157 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		56B15DC62BA235F100FCDFFE /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				56B15DC72BA235F600FCDFFE /* RemoteControl */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		56B15DC72BA235F600FCDFFE /* RemoteControl */ = {
-			isa = PBXGroup;
-			children = (
-				56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */,
-			);
-			path = RemoteControl;
-			sourceTree = "<group>";
-		};
 		56B15DCA2BA2384600FCDFFE /* FirebaseRemote */ = {
 			isa = PBXGroup;
 			children = (
 				56B15DCB2BA2385900FCDFFE /* FirebaseRemoteKeys.swift */,
 			);
 			path = FirebaseRemote;
+			sourceTree = "<group>";
+		};
+		56DD6C052BA3041E002FCBC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C352BA36A36002FCBC0 /* Service */,
+				56DD6C302BA3694C002FCBC0 /* Repository */,
+				56DD6C062BA30432002FCBC0 /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		56DD6C062BA30432002FCBC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C392BA36A75002FCBC0 /* ResponseModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56DD6C092BA31562002FCBC0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C0A2BA31573002FCBC0 /* CollectionExtensions.swift */,
+				56DD6C412BA3816E002FCBC0 /* UITableViewExtension.swift */,
+				56A206252BA3A4C600A1734B /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		56DD6C0C2BA315D3002FCBC0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C0D2BA315DA002FCBC0 /* Cells */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		56DD6C0D2BA315DA002FCBC0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C222BA35C38002FCBC0 /* SearchBarTableViewCell */,
+				56DD6C0E2BA315E7002FCBC0 /* MovieTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		56DD6C0E2BA315E7002FCBC0 /* MovieTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C0F2BA31618002FCBC0 /* MovieTableViewCell.swift */,
+				56DD6C102BA31618002FCBC0 /* MovieTableViewCell.xib */,
+			);
+			path = MovieTableViewCell;
+			sourceTree = "<group>";
+		};
+		56DD6C152BA31BAB002FCBC0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C162BA31BBE002FCBC0 /* Presentation.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		56DD6C182BA3205D002FCBC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C272BA35E23002FCBC0 /* Cell */,
+				56DD6C192BA32061002FCBC0 /* UIImage */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DD6C192BA32061002FCBC0 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C1A2BA32072002FCBC0 /* LocaleImages.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		56DD6C222BA35C38002FCBC0 /* SearchBarTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C232BA35C55002FCBC0 /* SearchBarTableViewCell.swift */,
+				56DD6C242BA35C55002FCBC0 /* SearchBarTableViewCell.xib */,
+			);
+			path = SearchBarTableViewCell;
+			sourceTree = "<group>";
+		};
+		56DD6C272BA35E23002FCBC0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C282BA35E2B002FCBC0 /* TableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		56DD6C282BA35E2B002FCBC0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C292BA35E3E002FCBC0 /* TableViewCellEnum.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		56DD6C302BA3694C002FCBC0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C332BA3698C002FCBC0 /* Repository.swift */,
+				56DD6C312BA36974002FCBC0 /* MovieRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		56DD6C352BA36A36002FCBC0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C372BA36A53002FCBC0 /* LoodosMoviesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		56DD6C392BA36A75002FCBC0 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C072BA30453002FCBC0 /* MovieResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		56DD6C3D2BA36DFD002FCBC0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C3E2BA36E01002FCBC0 /* NetworkConstant */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		56DD6C3E2BA36E01002FCBC0 /* NetworkConstant */ = {
+			isa = PBXGroup;
+			children = (
+				56DD6C3F2BA36E11002FCBC0 /* NetworkConstant.swift */,
+			);
+			path = NetworkConstant;
 			sourceTree = "<group>";
 		};
 		B6D0DEF159FDFD6F07CAB6CA /* Frameworks */ = {
@@ -294,6 +463,10 @@
 			dependencies = (
 			);
 			name = "Lodos Movies";
+			packageProductDependencies = (
+				56DD6C2C2BA36914002FCBC0 /* Alamofire */,
+				56DD6C2E2BA36914002FCBC0 /* AlamofireDynamic */,
+			);
 			productName = "Lodos Movies";
 			productReference = 568DE5872BA0E619006FF777 /* Lodos Movies.app */;
 			productType = "com.apple.product-type.application";
@@ -322,6 +495,9 @@
 				Base,
 			);
 			mainGroup = 568DE57E2BA0E619006FF777;
+			packageReferences = (
+				56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 568DE5882BA0E619006FF777 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +513,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				568DE5972BA0E61B006FF777 /* LaunchScreen.storyboard in Resources */,
+				56DD6C262BA35C55002FCBC0 /* SearchBarTableViewCell.xib in Resources */,
+				56DD6C122BA31618002FCBC0 /* MovieTableViewCell.xib in Resources */,
 				5630451E2BA1A9B300ABCD00 /* GoogleService-Info.plist in Resources */,
 				568DE5942BA0E61B006FF777 /* Assets.xcassets in Resources */,
 				568DE5922BA0E619006FF777 /* Main.storyboard in Resources */,
@@ -392,27 +570,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DD6C082BA30453002FCBC0 /* MovieResponse.swift in Sources */,
 				56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */,
 				56B15DC22BA2254A00FCDFFE /* Storyboards.swift in Sources */,
 				56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */,
+				56DD6C402BA36E11002FCBC0 /* NetworkConstant.swift in Sources */,
 				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
+				56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */,
+				56A206262BA3A4C600A1734B /* StringExtension.swift in Sources */,
+				56DD6C322BA36974002FCBC0 /* MovieRepository.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
-				568DE58F2BA0E619006FF777 /* ViewController.swift in Sources */,
 				56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */,
 				56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */,
+				56DD6C2A2BA35E3E002FCBC0 /* TableViewCellEnum.swift in Sources */,
 				56B15DA32BA20C3A00FCDFFE /* NetworkHelper.swift in Sources */,
 				56B15D812BA1FE4800FCDFFE /* SplashScreenModels.swift in Sources */,
 				56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */,
 				56B15D7F2BA1FE4800FCDFFE /* SplashScreenWorker.swift in Sources */,
 				568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */,
+				56DD6C342BA3698C002FCBC0 /* Repository.swift in Sources */,
 				56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */,
 				56B15D1A2BA1FB8400FCDFFE /* BaseViewController.swift in Sources */,
+				56DD6C142BA31B8C002FCBC0 /* BaseTableViewCell.swift in Sources */,
 				56B15D802BA1FE4800FCDFFE /* SplashScreenRouter.swift in Sources */,
+				56DD6C382BA36A53002FCBC0 /* LoodosMoviesService.swift in Sources */,
 				56B15DBC2BA2208F00FCDFFE /* MainPageModels.swift in Sources */,
 				56B15DBB2BA2208F00FCDFFE /* MainPageRouter.swift in Sources */,
+				56DD6C0B2BA31573002FCBC0 /* CollectionExtensions.swift in Sources */,
 				56B15DCC2BA2385900FCDFFE /* FirebaseRemoteKeys.swift in Sources */,
 				568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */,
+				56DD6C422BA3816E002FCBC0 /* UITableViewExtension.swift in Sources */,
+				56DD6C172BA31BBE002FCBC0 /* Presentation.swift in Sources */,
+				56DD6C112BA31618002FCBC0 /* MovieTableViewCell.swift in Sources */,
+				56DD6C1B2BA32072002FCBC0 /* LocaleImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +828,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56DD6C2C2BA36914002FCBC0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		56DD6C2E2BA36914002FCBC0 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56DD6C2B2BA36914002FCBC0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 568DE57F2BA0E619006FF777 /* Project object */;
 }
