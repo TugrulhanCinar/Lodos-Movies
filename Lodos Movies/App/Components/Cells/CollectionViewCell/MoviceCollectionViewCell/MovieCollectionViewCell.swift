@@ -1,48 +1,40 @@
 //
-//  MovieTableViewCell.swift
+//  MovieCollectionViewCell.swift
 //  Lodos Movies
 //
-//  Created by Tuğrul on 14.03.2024.
+//  Created by Tuğrul on 16.03.2024.
 //
 
 import UIKit
 
-protocol MovieTableViewCellDelegate: AnyObject {
-    func movieSection(_ sender: MovieTableViewCell, section: String)
+protocol MovieCollectionViewCellDelegate: AnyObject {
+    func movieSection(_ sender: MovieCollectionViewCell, section: String)
 }
 
-struct MovieTableViewCellPresentation: Presentation {
+struct MovieCollectionViewCellPresentation: Presentation {
     var id: String
     var imageUrl: String?
 }
 
-class MovieTableViewCell: BaseTableViewCell {
-    
+class MovieCollectionViewCell: BaseCollectionViewCell {
+
     // MARK: Outlets
     
     @IBOutlet weak var viewContent: UIView!
     @IBOutlet weak var imageViewMovie: UIImageView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    
     // MARK: - Variables
     
-    var presentation: MovieTableViewCellPresentation? {
+    var presentation: MovieCollectionViewCellPresentation? {
         didSet {
             setupUI()
         }
     }
-    weak var delegate: MovieTableViewCellDelegate?
+    weak var delegate: MovieCollectionViewCellDelegate?
+
     
     // MARK: Life Cycle
 
-    @IBAction func buttonOnTapMovie(_ sender: UIButton) {
-        
-        if let id = presentation?.id {
-            delegate?.movieSection(self, section: id)
-
-        }
-    }
-    
     private func setupUI() {
         
         if let imageUrl = presentation?.imageUrl {
@@ -53,11 +45,19 @@ class MovieTableViewCell: BaseTableViewCell {
         
     }
     
+    @IBAction func buttonOnTapMovie(_ sender: UIButton) {
+        
+        if let id = presentation?.id {
+            delegate?.movieSection(self, section: id)
+
+        }
+    }
+    
     override func applyStyling() {
         
         super.applyStyling()
-        viewContent.layer.cornerRadius = LodosMoviesRadiusConstants.mediumCornerRadius
-        imageViewMovie.layer.cornerRadius = LodosMoviesRadiusConstants.mediumCornerRadius
+        viewContent.layer.cornerRadius = LodosMoviesRadiusConstants.lowCornerRadius
+        imageViewMovie.layer.cornerRadius = LodosMoviesRadiusConstants.lowCornerRadius
     }
     
     private func setImage(imagePath: String) {
@@ -90,19 +90,6 @@ class MovieTableViewCell: BaseTableViewCell {
         
         imageViewMovie.image = LocaleImage.brokenImage.getUIImage()
     }
-}
+    
 
-extension UIActivityIndicatorView {
-    
-    func hiddenAndStopAnimation() {
-        
-        self.stopAnimating()
-        self.isHidden = true
-    }
-    
-    func unHiddenAndStartAnimation() {
-        
-        self.startAnimating()
-        self.isHidden = false
-    }
 }
