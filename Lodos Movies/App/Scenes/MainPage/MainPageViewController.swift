@@ -26,13 +26,20 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     // MARK: Outlets
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableViewMovies: UITableView!
+    @IBOutlet weak var collectionViewMovies: UICollectionView!
     
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        let columnLayout = ColumnFlowLayout(
+            cellsPerRow: 2,
+            minimumInteritemSpacing: 4,
+            minimumLineSpacing: 4,
+            sectionInset: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        )
+        collectionViewMovies.collectionViewLayout = columnLayout
         setup()
         registerTableView()
     }
@@ -40,11 +47,13 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
+        
         super.init(coder: aDecoder)
         setup()
     }
@@ -52,6 +61,7 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     // MARK: - Setup
 
     private func setup() {
+        
         let viewController = self
         let interactor = MainPageInteractor()
         let presenter = MainPagePresenter()
@@ -66,14 +76,13 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
 
     private func registerTableView() {
         
-        tableViewMovies.dataSource = self
-        tableViewMovies.delegate = self
+        collectionViewMovies.dataSource = self
+        collectionViewMovies.delegate = self
         
-        let movieCell = UINib(nibName: TableViewCellEnum.movieCell.rawValue, bundle: Bundle(for: MainPageViewController.self))
-        let searchCell = UINib(nibName: TableViewCellEnum.searchCell.rawValue, bundle: Bundle(for: SearchBarTableViewCell.self))
+        let movieCollection = UINib(nibName: TableViewCellEnum.movieCell.rawValue, bundle: Bundle(for: MovieCollectionViewCell.self))
         
-        tableViewMovies.register(movieCell, forCellReuseIdentifier: TableViewCellEnum.movieCell.rawValue)
-        tableViewMovies.register(searchCell, forCellReuseIdentifier: TableViewCellEnum.searchCell.rawValue)
+        collectionViewMovies.register(movieCollection, forCellWithReuseIdentifier: TableViewCellEnum.movieCell.rawValue)
+        
     }
 
 }
@@ -88,14 +97,14 @@ extension MainPageViewController {
         
         if viewModel.isContinue {
             indicator.unHiddenAndStartAnimation()
-            tableViewMovies.restore()
+            collectionViewMovies.restore()
         } else if let searchList = viewModel.results?.search, !viewModel.isContinue {
-            tableViewMovies.restore()
+            collectionViewMovies.restore()
             self.search = searchList
             indicator.hiddenAndStopAnimation()
-            tableViewMovies.reloadData()
+            collectionViewMovies.reloadData()
         } else {
-            tableViewMovies.setEmptyView(title: UIMessageConstant.notFoundTitle, message: UIMessageConstant.notFoundMSG)
+            collectionViewMovies.setEmptyView(title: UIMessageConstant.notFoundTitle, message: UIMessageConstant.notFoundMSG)
         }
     }
     
@@ -105,46 +114,36 @@ extension MainPageViewController {
     }
 
 }
-// MARK: - Viewcontroller
+// MARK: - UICollectionViewDelegate
 
-extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return search.count + 1
+        return search.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row == 0 {
-            let searchCell = tableViewMovies.dequeueReusableCell(withIdentifier: TableViewCellEnum.searchCell.rawValue) as! SearchBarTableViewCell
-            searchCell.delegate = self
-            return searchCell
-        } else {
-            if let movie = search[safe: indexPath.row - 1] {
-                let movieCell = tableViewMovies.dequeueReusableCell(withIdentifier: TableViewCellEnum.movieCell.rawValue) as! MovieTableViewCell
-                let moviePresentation = MovieTableViewCellPresentation(id: movie.imdbID, imageUrl: movie.poster)
-                movieCell.presentation = moviePresentation
-                movieCell.delegate = self
-                return movieCell
-            }
+        if let movie = search[safe: indexPath.row] {
+            let movieCell = collectionViewMovies.dequeueReusableCell(withReuseIdentifier: TableViewCellEnum.movieCell.rawValue, for: indexPath) as! MovieCollectionViewCell
+            let presentation = MovieCollectionViewCellPresentation(id: movie.imdbID, imageUrl: movie.poster)
+            
+            movieCell.presentation = presentation
+            movieCell.delegate = self
+            
+            return movieCell
         }
         
-        return UITableViewCell()
+        return UICollectionViewCell()
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return indexPath.row == 0 ? 70 : 500
-    }
-    
 }
 
-// MARK: - MovieTableViewCellDelegate
+// MARK: - MovieCollectionViewCellDelegate
 
-extension MainPageViewController: MovieTableViewCellDelegate {
+extension MainPageViewController: MovieCollectionViewCellDelegate {
     
-    func movieSection(_ sender: MovieTableViewCell, section: String) {
+    func movieSection(_ sender: MovieCollectionViewCell, section: String) {
         
         interactor?.selectedMovie(request: MainPage.SelectedMovie.Request(movieID: section))
     }
@@ -152,12 +151,17 @@ extension MainPageViewController: MovieTableViewCellDelegate {
 
 // MARK: - SearchBarTableViewCellDelegate
 
-extension MainPageViewController: SearchBarTableViewCellDelegate {
-    
-    func textChanged(_ sender: SearchBarTableViewCell, text: String?) {
-        
-        if let text = text, text.count > 1 {
-            interactor?.search(request: MainPage.Search.Request(searchText: text))
-        }
+extension MainPageViewController: UISearchBarDelegate {
+ 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+     
+        searchTimer?.invalidate()
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            if searchText.count > 1 {
+                self.interactor?.search(request: MainPage.Search.Request(searchText: searchText))
+            }
+        })
     }
 }
+
+
