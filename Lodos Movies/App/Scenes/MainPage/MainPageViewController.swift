@@ -10,6 +10,7 @@ protocol MainPageDisplayLogic: AnyObject {
 
     func displayInitializeResult(viewModel: MainPage.Initialize.ViewModel)
     func displaySearchResult(viewModel: MainPage.Search.ViewModel)
+    func displaySelectedMovieResult(viewModel: MainPage.SelectedMovie.ViewModel)
 }
 
 class MainPageViewController: BaseViewController, MainPageDisplayLogic {
@@ -34,6 +35,18 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
         super.viewDidLoad()
         setup()
         registerTableView()
+    }
+    
+    // MARK: Object lifecycle
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
     
     // MARK: - Setup
@@ -85,6 +98,12 @@ extension MainPageViewController {
             tableViewMovies.setEmptyView(title: "Bulunmadı", message: "Aradığınız isimde bir film bulunmadı")
         }
     }
+    
+    func displaySelectedMovieResult(viewModel: MainPage.SelectedMovie.ViewModel) {
+        
+        router?.routeToMovieDetail()
+    }
+
 }
 // MARK: - Viewcontroller
 
@@ -127,11 +146,8 @@ extension MainPageViewController: MovieTableViewCellDelegate {
     
     func movieSection(_ sender: MovieTableViewCell, section: String) {
         
-        // TODO: Add on tap a cell
-        print("tapped: \(section)")
+        interactor?.selectedMovie(request: MainPage.SelectedMovie.Request(movieID: section))
     }
-    
-    
 }
 
 // MARK: - SearchBarTableViewCellDelegate

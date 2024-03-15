@@ -41,4 +41,15 @@ enum MainPage
             var results: MovieResponse?
         }
     }
+    
+    enum SelectedMovie {
+
+        struct Request { 
+            var movieID: String
+        }
+
+        struct Response { }
+
+        struct ViewModel { }
+    }
 }

@@ -18,13 +18,14 @@ protocol MovieDetailBusinessLogic {
     func finalize(request: MovieDetail.Finalize.Request)}
 
 protocol MovieDetailDataStore {
-    //var name: String { get set }
+    var movieID: String { get set}
 }
 
 class MovieDetailInteractor: MovieDetailBusinessLogic, MovieDetailDataStore {
     var presenter: MovieDetailPresentationLogic?
     var worker: MovieDetailWorker?
-    
+    var movieID: String = ""
+
     init() {
         
         worker = MovieDetailWorker()

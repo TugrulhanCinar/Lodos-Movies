@@ -25,8 +25,9 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        interactor?.reload(request: MovieDetail.Reload.Request())
     }
-    
+
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -38,8 +39,8 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
         super.init(coder: aDecoder)
         setup()
     }
-
-    // MARK: - Setup Clean Code Design Pattern 
+    
+    // MARK: Setup Pattern
 
     private func setup() {
         let viewController = self

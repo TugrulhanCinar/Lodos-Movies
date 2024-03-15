@@ -9,6 +9,7 @@ import UIKit
 
 enum ViewControllers: String {
     case mainPage = "MainPageViewController"
+    case movieDetail = "MovieDetailViewController"
     
     func getViewcontrollers(storyboard: Storyboards = .main) -> BaseViewController {
         
