@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - MovieResponse
 
@@ -35,17 +36,17 @@ struct Search: Codable {
     }
 }
 
-// MARK: - Rating
+// MARK: - MovieDetailResponse
 
 struct MovieDetailResponse: Codable {
-    var title, year, rated, released: String
-    var runtime, genre, director, writer: String
-    var actors, plot, language, country: String
-    var awards, poster: String
+    var title, year, rated, released: String?
+    var runtime, genre, director, writer: String?
+    var actors, plot, language, country: String?
+    var awards, poster: String?
     var ratings: [Rating]
-    var metascore, imdbRating, imdbVotes, imdbID: String
-    var type, dvd, boxOffice, production: String
-    var website, response: String
+    var metascore, imdbRating, imdbVotes, imdbID: String?
+    var type, dvd, boxOffice, production: String?
+    var response: String?
 
     enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -69,7 +70,6 @@ struct MovieDetailResponse: Codable {
         case dvd = "DVD"
         case boxOffice = "BoxOffice"
         case production = "Production"
-        case website = "Website"
         case response = "Response"
     }
 }
@@ -84,3 +84,43 @@ struct Rating: Codable {
         case value = "Value"
     }
 }
+
+
+// MARK: - MovieDetailResponse
+
+extension MovieDetailResponse {
+    
+    func toAttributedString() -> NSAttributedString {
+        let attributedString = NSMutableAttributedString()
+
+        func append(key: String, value: String?) {
+            
+            guard let value = value else { return }
+            let boldAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)]
+            let italicAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 16)]
+
+            let keyString = NSAttributedString(string: "\(key): ", attributes: boldAttributes)
+            let valueString = NSAttributedString(string: "\(value)\n", attributes: italicAttributes)
+
+            attributedString.append(keyString)
+            attributedString.append(valueString)
+            
+        }
+
+        append(key: "Metascore", value: self.metascore)
+        append(key: "IMDB Rating", value: self.imdbRating)
+        append(key: "IMDB Votes", value: self.imdbVotes)
+        append(key: "Type", value: self.type)
+        append(key: "DVD", value: self.dvd)
+        append(key: "Box Office", value: self.boxOffice)
+        append(key: "Production", value: self.production)
+        append(key: "Response", value: self.response)
+        self.ratings.forEach { rating in
+            append(key: rating.source, value: rating.value)
+        }
+
+
+        return attributedString
+    }
+}
+

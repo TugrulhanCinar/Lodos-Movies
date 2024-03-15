@@ -27,6 +27,7 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
     @IBOutlet weak var imageViewMovie: UIImageView!
     @IBOutlet weak var textViewMovieDetails: UITextView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var labelNotFetchedMovie: UILabel!
     
     // MARK: lifecycle
     
@@ -64,15 +65,9 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
         router.dataStore = interactor
     }
 
-    // MARK: - Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
+    func setPageComponents(moviewDetail: MovieDetailResponse) {
+        
+        textViewMovieDetails.attributedText = moviewDetail.toAttributedString()
     }
 
 }
@@ -85,7 +80,20 @@ extension MovieDetailViewController {
 
     func displayReloadResult(viewModel: MovieDetail.Reload.ViewModel) { 
         
+        if viewModel.isContinue {
+            indicatorView.unHiddenAndStartAnimation()
+        } else {
+            indicatorView.hiddenAndStopAnimation()
+        }
         
+        if let movieDetail = viewModel.movieDetail {
+            labelNotFetchedMovie.isHidden = true
+            setImage(imagePath: movieDetail.poster)
+            setPageComponents(moviewDetail: movieDetail)
+        } else {
+            labelNotFetchedMovie.isHidden = false
+            labelNotFetchedMovie.text = "Details of the movie could not be found"
+        }
     }
 
     func displayFinalizeResult(viewModel: MovieDetail.Finalize.ViewModel) { }
@@ -95,11 +103,11 @@ extension MovieDetailViewController {
 
 extension MovieDetailViewController {
     
-    private func setImage(imagePath: String) {
+    private func setImage(imagePath: String?) {
 
-        guard let url = URL(string: imagePath) else {
-
-            print("Failed to present attachment due to an invalid url: ", imagePath)
+        guard let imagePath = imagePath, let url = URL(string: imagePath) else {
+            setBrokenImage()
+            print("Failed to present attachment due to an invalid url: ")
             return
         }
         imageViewMovie.image  = nil

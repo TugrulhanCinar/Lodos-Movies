@@ -126,6 +126,12 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RKN-1l-Je0">
                                 <rect key="frame" x="186.66666666666666" y="182" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-gj-Mb0">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DWK-aD-TmJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -138,12 +144,15 @@
                             <constraint firstItem="DWK-aD-TmJ" firstAttribute="trailing" secondItem="5aq-Ea-Mda" secondAttribute="trailing" constant="8" id="bHb-KI-i05"/>
                             <constraint firstItem="DWK-aD-TmJ" firstAttribute="bottom" secondItem="iIm-qn-uHe" secondAttribute="bottom" id="cpv-y4-Pco"/>
                             <constraint firstItem="iIm-qn-uHe" firstAttribute="top" secondItem="5aq-Ea-Mda" secondAttribute="bottom" constant="8" id="dwu-dX-TLJ"/>
+                            <constraint firstItem="YHe-gj-Mb0" firstAttribute="centerY" secondItem="fpR-TO-CRj" secondAttribute="centerY" id="oWc-4S-N0C"/>
+                            <constraint firstItem="YHe-gj-Mb0" firstAttribute="centerX" secondItem="fpR-TO-CRj" secondAttribute="centerX" id="q11-Vl-Nc2"/>
                             <constraint firstItem="iIm-qn-uHe" firstAttribute="leading" secondItem="5aq-Ea-Mda" secondAttribute="leading" id="vks-vv-FVz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageViewMovie" destination="5aq-Ea-Mda" id="2ME-h4-5l4"/>
                         <outlet property="indicatorView" destination="RKN-1l-Je0" id="K7K-zA-136"/>
+                        <outlet property="labelNotFetchedMovie" destination="YHe-gj-Mb0" id="uJ6-Js-EKf"/>
                         <outlet property="textViewMovieDetails" destination="iIm-qn-uHe" id="Tad-HL-TBy"/>
                     </connections>
                 </viewController>

@@ -20,9 +20,15 @@ enum MovieDetail {
 
         struct Request { }
 
-        struct Response { }
+        struct Response { 
+            var isContinue: Bool
+            var movieDetail: MovieDetailResponse?
+        }
 
-        struct ViewModel { }
+        struct ViewModel {
+            var isContinue: Bool
+            var movieDetail: MovieDetailResponse?
+        }
     }
 
     enum Finalize {

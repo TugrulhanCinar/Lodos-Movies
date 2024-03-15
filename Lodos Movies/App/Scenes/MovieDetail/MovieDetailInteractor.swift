@@ -43,7 +43,10 @@ extension MovieDetailInteractor {
     
     func reload(request: MovieDetail.Reload.Request) {
 
-        presenter?.presentReloadResult(response: MovieDetail.Reload.Response())
+        self.presenter?.presentReloadResult(response: MovieDetail.Reload.Response(isContinue: true, movieDetail: nil))
+        worker?.fetchMovieDetail(movideID: movieID, completion: { movieDetail in
+            self.presenter?.presentReloadResult(response: MovieDetail.Reload.Response(isContinue: false, movieDetail: movieDetail))
+        })
     }
     
     func finalize(request: MovieDetail.Finalize.Request) {
