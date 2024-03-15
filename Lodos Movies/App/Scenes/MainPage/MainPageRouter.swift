@@ -37,7 +37,7 @@ class MainPageRouter: NSObject, MainPageRoutingLogic, MainPageDataPassing {
     
     private func navigateToDetail(source: MainPageViewController, destination: MovieDetailViewController) {
         
-        source.show(destination, sender: nil)
+        source.showDetailViewController(destination, sender: nil)
     }
     
     // MARK: Passing data
