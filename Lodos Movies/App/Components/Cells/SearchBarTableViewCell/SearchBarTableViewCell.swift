@@ -29,6 +29,12 @@ class SearchBarTableViewCell: BaseTableViewCell {
         super.awakeFromNib()
         searchBarMovie.delegate = self
     }
+    
+    override func applyStyling() {
+        
+        super.applyStyling()
+        searchBarMovie.placeholder = UIMessageConstant.searchBarTitle
+    }
 }
 
 // MARK: - SearchBarTableViewCellDelegate

@@ -28,12 +28,14 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
     @IBOutlet weak var textViewMovieDetails: UITextView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var labelNotFetchedMovie: UILabel!
+    @IBOutlet weak var constraitImageHeight: NSLayoutConstraint!
     
     // MARK: lifecycle
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        imageViewMovie.layer.cornerRadius = LodosMoviesRadiusConstants.mediumCornerRadius
         interactor?.reload(request: MovieDetail.Reload.Request())
     }
 
@@ -92,7 +94,7 @@ extension MovieDetailViewController {
             setPageComponents(moviewDetail: movieDetail)
         } else {
             labelNotFetchedMovie.isHidden = false
-            labelNotFetchedMovie.text = "Details of the movie could not be found"
+            labelNotFetchedMovie.text = UIMessageConstant.detailNotFound
         }
     }
 
@@ -112,15 +114,18 @@ extension MovieDetailViewController {
         }
         imageViewMovie.image  = nil
         imageViewMovie.isHidden = true
+        textViewMovieDetails.isHidden = true
         indicatorView.unHiddenAndStartAnimation()
-
+        
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if error == nil {
                 guard let unwrappedData = data, let image = UIImage(data: unwrappedData) else { return }
                 DispatchQueue.main.async {
+                    self.constraitImageHeight.constant = image.size.height
                     self.indicatorView.hiddenAndStopAnimation()
                     self.imageViewMovie.isHidden = false
                     self.imageViewMovie.image = image
+                    self.textViewMovieDetails.isHidden = false
                 }
             } else {
                 self.setBrokenImage()

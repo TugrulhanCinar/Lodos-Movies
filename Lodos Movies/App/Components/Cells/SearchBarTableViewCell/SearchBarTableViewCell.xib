@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="409" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <searchBar contentMode="redraw" placeholder="Lütfen istediğiniz filmi arayın" translatesAutoresizingMaskIntoConstraints="NO" id="edM-3L-aHe">
+                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="edM-3L-aHe">
                         <rect key="frame" x="0.0" y="0.0" width="409" height="70"/>
                         <textInputTraits key="textInputTraits"/>
                     </searchBar>

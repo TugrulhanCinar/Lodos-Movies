@@ -56,8 +56,8 @@ class MovieTableViewCell: BaseTableViewCell {
     override func applyStyling() {
         
         super.applyStyling()
-        viewContent.layer.cornerRadius = 15
-        imageViewMovie.layer.cornerRadius = 15
+        viewContent.layer.cornerRadius = LodosMoviesRadiusConstants.mediumCornerRadius
+        imageViewMovie.layer.cornerRadius = LodosMoviesRadiusConstants.mediumCornerRadius
     }
     
     private func setImage(imagePath: String) {

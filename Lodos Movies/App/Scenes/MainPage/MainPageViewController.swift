@@ -95,7 +95,7 @@ extension MainPageViewController {
             indicator.hiddenAndStopAnimation()
             tableViewMovies.reloadData()
         } else {
-            tableViewMovies.setEmptyView(title: "Bulunmadı", message: "Aradığınız isimde bir film bulunmadı")
+            tableViewMovies.setEmptyView(title: UIMessageConstant.notFoundTitle, message: UIMessageConstant.notFoundMSG)
         }
     }
     
