@@ -92,7 +92,9 @@ extension MovieDetailViewController {
             labelNotFetchedMovie.isHidden = true
             setImage(imagePath: movieDetail.poster)
             setPageComponents(moviewDetail: movieDetail)
-        } else {
+        }
+        
+        if viewModel.movieDetail == nil, viewModel.isContinue == false {
             labelNotFetchedMovie.isHidden = false
             labelNotFetchedMovie.text = UIMessageConstant.detailNotFound
         }

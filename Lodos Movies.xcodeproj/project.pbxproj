@@ -16,6 +16,8 @@
 		560AA6E42BA45F5400FA6777 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6E32BA45F5400FA6777 /* File.swift */; };
 		560AA6E72BA4604A00FA6777 /* RadiusConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6E62BA4604A00FA6777 /* RadiusConstant.swift */; };
 		560AA6E92BA460AB00FA6777 /* FontSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6E82BA460AB00FA6777 /* FontSizeConstant.swift */; };
+		560AA6EB2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6EA2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift */; };
+		560AA6ED2BA46C3700FA6777 /* Date+Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6EC2BA46C3700FA6777 /* Date+Formatted.swift */; };
 		5630451E2BA1A9B300ABCD00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */; };
 		568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58A2BA0E619006FF777 /* AppDelegate.swift */; };
 		568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58C2BA0E619006FF777 /* SceneDelegate.swift */; };
@@ -71,6 +73,8 @@
 		560AA6E32BA45F5400FA6777 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		560AA6E62BA4604A00FA6777 /* RadiusConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusConstant.swift; sourceTree = "<group>"; };
 		560AA6E82BA460AB00FA6777 /* FontSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeConstant.swift; sourceTree = "<group>"; };
+		560AA6EA2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsHelper.swift; sourceTree = "<group>"; };
+		560AA6EC2BA46C3700FA6777 /* Date+Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatted.swift"; sourceTree = "<group>"; };
 		5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		568DE5872BA0E619006FF777 /* Lodos Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lodos Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568DE58A2BA0E619006FF777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 			children = (
 				56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */,
 				56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */,
+				560AA6EA2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				56DD6C0A2BA31573002FCBC0 /* CollectionExtensions.swift */,
 				56DD6C412BA3816E002FCBC0 /* UITableViewExtension.swift */,
 				56A206252BA3A4C600A1734B /* StringExtension.swift */,
+				560AA6EC2BA46C3700FA6777 /* Date+Formatted.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -646,6 +652,7 @@
 				56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */,
 				560AA6C62BA42F1400FA6777 /* MovieDetailInteractor.swift in Sources */,
 				56B15D7F2BA1FE4800FCDFFE /* SplashScreenWorker.swift in Sources */,
+				560AA6EB2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift in Sources */,
 				568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */,
 				56DD6C342BA3698C002FCBC0 /* Repository.swift in Sources */,
 				56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */,
@@ -664,6 +671,7 @@
 				56DD6C172BA31BBE002FCBC0 /* Presentation.swift in Sources */,
 				56DD6C112BA31618002FCBC0 /* MovieTableViewCell.swift in Sources */,
 				56DD6C1B2BA32072002FCBC0 /* LocaleImages.swift in Sources */,
+				560AA6ED2BA46C3700FA6777 /* Date+Formatted.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@ class NetworkHelper {
     
     @objc func reachabilityChanged(note: Notification) {
 
-      let reachability = note.object as! Reachability
+        _ = note.object as! Reachability
         chechNotification()
     }
 

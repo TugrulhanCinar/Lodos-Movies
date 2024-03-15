@@ -43,6 +43,9 @@ extension MovieDetailInteractor {
     
     func reload(request: MovieDetail.Reload.Request) {
 
+        if !movieID.isEmpty {
+            FirebaseAnalyticsHelper.shared.sendMovieDetailAnalyticData(movieDetailID: movieID)
+        }
         self.presenter?.presentReloadResult(response: MovieDetail.Reload.Response(isContinue: true, movieDetail: nil))
         worker?.fetchMovieDetail(movideID: movieID, completion: { movieDetail in
             self.presenter?.presentReloadResult(response: MovieDetail.Reload.Response(isContinue: false, movieDetail: movieDetail))

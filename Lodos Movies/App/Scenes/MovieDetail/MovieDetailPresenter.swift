@@ -29,7 +29,12 @@ extension MovieDetailPresenter {
 
     func presentReloadResult(response: MovieDetail.Reload.Response) {
         
-        viewController?.displayReloadResult(viewModel: MovieDetail.Reload.ViewModel(isContinue: response.isContinue, movieDetail: response.movieDetail))
+        viewController?.displayReloadResult(
+            viewModel: MovieDetail.Reload.ViewModel(
+                isContinue: response.isContinue, 
+                movieDetail: response.movieDetail
+            )
+        )
     }
 
     func presentFinalizeResult(response: MovieDetail.Finalize.Response) {
