@@ -33,6 +33,15 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        indicator.isHidden = true
+        addCustomColumnLayout()
+        setup()
+        registerTableView()
+        addSearchController()
+    }
+    
+    private func addCustomColumnLayout() {
+        
         let columnLayout = ColumnFlowLayout(
             cellsPerRow: 2,
             minimumInteritemSpacing: 4,
@@ -40,8 +49,17 @@ class MainPageViewController: BaseViewController, MainPageDisplayLogic {
             sectionInset: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         )
         collectionViewMovies.collectionViewLayout = columnLayout
-        setup()
-        registerTableView()
+    }
+    
+    private func addSearchController() {
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.searchTextField.textColor = .white
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     // MARK: Object lifecycle
@@ -155,13 +173,25 @@ extension MainPageViewController: UISearchBarDelegate {
  
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
      
-        searchTimer?.invalidate()
-        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            if searchText.count > 1 {
-                self.interactor?.search(request: MainPage.Search.Request(searchText: searchText))
-            }
-        })
+       
     }
 }
 
 
+// MARK: - UISearchResultsUpdating
+
+extension MainPageViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        searchTimer?.invalidate()
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            if let searchText =  searchController.searchBar.searchTextField.text, !searchText.isEmpty {
+                self.interactor?.search(request: MainPage.Search.Request(searchText: searchText))
+            } else {
+                self.search.removeAll()
+                self.collectionViewMovies.reloadData()
+            }
+        })
+    }
+}

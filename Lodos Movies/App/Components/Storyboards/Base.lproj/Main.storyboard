@@ -49,17 +49,11 @@
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NLc-Ox-bHE">
                                 <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                                <color key="color" red="1" green="0.058823529409999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BcJ-Pq-JoP">
-                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ypJ-Oa-qSa" id="KRt-pb-Llz"/>
-                                </connections>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="icl-rx-pz8">
-                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sRf-25-VFV">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -73,12 +67,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NLc-Ox-bHE" firstAttribute="centerY" secondItem="BtU-z0-4PE" secondAttribute="centerY" id="5KZ-l5-RXS"/>
-                            <constraint firstItem="icl-rx-pz8" firstAttribute="top" secondItem="BcJ-Pq-JoP" secondAttribute="bottom" id="Ck3-G4-hfU"/>
                             <constraint firstItem="NLc-Ox-bHE" firstAttribute="centerX" secondItem="BtU-z0-4PE" secondAttribute="centerX" id="JMe-jA-WU6"/>
-                            <constraint firstItem="BcJ-Pq-JoP" firstAttribute="trailing" secondItem="Ode-iD-ihV" secondAttribute="trailing" id="KIT-vq-Hoj"/>
-                            <constraint firstItem="BcJ-Pq-JoP" firstAttribute="top" secondItem="Ode-iD-ihV" secondAttribute="top" id="Pvs-tf-WVL"/>
+                            <constraint firstItem="icl-rx-pz8" firstAttribute="top" secondItem="Ode-iD-ihV" secondAttribute="top" id="RYe-tv-OII"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="trailing" secondItem="icl-rx-pz8" secondAttribute="trailing" id="TAb-TB-Bdf"/>
-                            <constraint firstItem="BcJ-Pq-JoP" firstAttribute="leading" secondItem="Ode-iD-ihV" secondAttribute="leading" id="xiW-KX-Lk2"/>
                             <constraint firstItem="icl-rx-pz8" firstAttribute="leading" secondItem="Ode-iD-ihV" secondAttribute="leading" id="ySK-GD-1ai"/>
                             <constraint firstItem="Ode-iD-ihV" firstAttribute="bottom" secondItem="icl-rx-pz8" secondAttribute="bottom" id="zQT-BB-V5R"/>
                         </constraints>
