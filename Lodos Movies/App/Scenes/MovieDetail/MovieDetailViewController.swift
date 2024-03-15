@@ -22,6 +22,14 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
     var interactor: MovieDetailBusinessLogic?
     var router: (NSObjectProtocol & MovieDetailRoutingLogic & MovieDetailDataPassing)?
 
+    // MARK: Outlets
+    
+    @IBOutlet weak var imageViewMovie: UIImageView!
+    @IBOutlet weak var textViewMovieDetails: UITextView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    // MARK: lifecycle
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -43,6 +51,7 @@ class MovieDetailViewController: BaseViewController, MovieDetailDisplayLogic {
     // MARK: Setup Pattern
 
     private func setup() {
+
         let viewController = self
         let interactor = MovieDetailInteractor()
         let presenter = MovieDetailPresenter()
@@ -74,7 +83,46 @@ extension MovieDetailViewController {
     
     func displayInitializeResult(viewModel: MovieDetail.Initialize.ViewModel) { }
 
-    func displayReloadResult(viewModel: MovieDetail.Reload.ViewModel) { }
+    func displayReloadResult(viewModel: MovieDetail.Reload.ViewModel) { 
+        
+        
+    }
 
     func displayFinalizeResult(viewModel: MovieDetail.Finalize.ViewModel) { }
+}
+
+// MARK: - Image Logics
+
+extension MovieDetailViewController {
+    
+    private func setImage(imagePath: String) {
+
+        guard let url = URL(string: imagePath) else {
+
+            print("Failed to present attachment due to an invalid url: ", imagePath)
+            return
+        }
+        imageViewMovie.image  = nil
+        imageViewMovie.isHidden = true
+        indicatorView.unHiddenAndStartAnimation()
+
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            if error == nil {
+                guard let unwrappedData = data, let image = UIImage(data: unwrappedData) else { return }
+                DispatchQueue.main.async {
+                    self.indicatorView.hiddenAndStopAnimation()
+                    self.imageViewMovie.isHidden = false
+                    self.imageViewMovie.image = image
+                }
+            } else {
+                self.setBrokenImage()
+            }
+        })
+        task.resume()
+    }
+    
+    private func setBrokenImage() {
+        
+        imageViewMovie.image = LocaleImage.brokenImage.getUIImage()
+    }
 }

@@ -60,7 +60,7 @@ class MovieTableViewCell: BaseTableViewCell {
         imageViewMovie.layer.cornerRadius = 15
     }
     
-    private func setImage(imagePath: String){
+    private func setImage(imagePath: String) {
 
         guard let url = URL(string: imagePath) else {
 

@@ -44,7 +44,6 @@ class FirebaseRemoteControlHelper {
                     
                     self.welcomeText = self.remoteConfig.configValue(forKey: FirebaseRemoteKeys.welcomeText.rawValue).stringValue
                     
-                    print("fetched \(self.welcomeText ?? "no data")")
                     completionHandler(self.welcomeText)
                 }
             } else {
