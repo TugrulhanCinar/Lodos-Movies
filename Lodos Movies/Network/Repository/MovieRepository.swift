@@ -5,6 +5,8 @@
 //  Created by Tuğrul on 14.03.2024.
 //
 
+import Foundation
+
 protocol MovieRepositoryLogic: Repository {
     func fetchMovies(movieTitle text: String, completion: @escaping  (MovieResponse?) -> Void)
     func fetchMovieDetail(movieID id: String, completion: @escaping (MovieDetailResponse?) -> Void)
@@ -22,6 +24,12 @@ class MovieRepository: MovieRepositoryLogic {
         
         
         let responseUrl = movieBaseUrl + text.lowercased().replacingOccurrences(of: " ", with: "+") + "&apikey=\(NetworkConstant.apiKey)"
+        
+        guard  let _ = URL(string: responseUrl) else {
+            print("unsupported URL")
+            completion(nil)
+            return
+        }
         
         LoodosMoviesService.shared.get(url: responseUrl) { response, error in
             if let response = response, let movies: MovieResponse = self.getObject(data: response) {

@@ -113,16 +113,18 @@ extension MainPageViewController {
     
     func displaySearchResult(viewModel: MainPage.Search.ViewModel) { 
         
-        if viewModel.isContinue {
-            indicator.unHiddenAndStartAnimation()
-            collectionViewMovies.restore()
+        collectionViewMovies.restore()
+        if !viewModel.isContinue && (viewModel.results == nil || viewModel.results?.search.isEmpty == true) {
+            indicator.hiddenAndStopAnimation()
+            collectionViewMovies.setEmptyView(title: UIMessageConstant.notFoundTitle, message: UIMessageConstant.notFoundMSG)
         } else if let searchList = viewModel.results?.search, !viewModel.isContinue {
             collectionViewMovies.restore()
             self.search = searchList
             indicator.hiddenAndStopAnimation()
             collectionViewMovies.reloadData()
         } else {
-            collectionViewMovies.setEmptyView(title: UIMessageConstant.notFoundTitle, message: UIMessageConstant.notFoundMSG)
+            indicator.unHiddenAndStartAnimation()
+            collectionViewMovies.restore()
         }
     }
     
@@ -167,17 +169,6 @@ extension MainPageViewController: MovieCollectionViewCellDelegate {
     }
 }
 
-// MARK: - SearchBarTableViewCellDelegate
-
-extension MainPageViewController: UISearchBarDelegate {
- 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-     
-       
-    }
-}
-
-
 // MARK: - UISearchResultsUpdating
 
 extension MainPageViewController: UISearchResultsUpdating {
@@ -191,6 +182,7 @@ extension MainPageViewController: UISearchResultsUpdating {
             } else {
                 self.search.removeAll()
                 self.collectionViewMovies.reloadData()
+                self.collectionViewMovies.restore()
             }
         })
     }
