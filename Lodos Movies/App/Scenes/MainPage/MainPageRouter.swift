@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol MainPageRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToMovieDetail()
 }
 
 protocol MainPageDataPassing {
@@ -24,31 +24,26 @@ class MainPageRouter: NSObject, MainPageRoutingLogic, MainPageDataPassing {
     weak var viewController: MainPageViewController?
     var dataStore: MainPageDataStore?
 
-// MARK: Routing (navigating to other screens)
-
-//func routeToSomewhere(segue: UIStoryboardSegue?) {
-//    if let segue = segue {
-//        let destinationVC = segue.destination as! SomewhereViewController
-//        var destinationDS = destinationVC.router!.dataStore!
-//        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//    } else {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-//        var destinationDS = destinationVC.router!.dataStore!
-//        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//        navigateToSomewhere(source: viewController!, destination: destinationVC)
-//    }
-//}
-
-// MARK: Navigation to other screen
-
-//func navigateToSomewhere(source: MainPageViewController, destination: SomewhereViewController) {
-//    source.show(destination, sender: nil)
-//}
-
-// MARK: Passing data to other screen
-
-//    func passDataToSomewhere(source: MainPageDataStore, destination: inout SomewhereDataStore) {
-//        destination.name = source.name
-//    }
+    func routeToMovieDetail() {
+        
+        let detailVC = ViewControllers.movieDetail.getViewcontrollers() as! MovieDetailViewController
+        var detailDataStore = detailVC.router!.dataStore!
+        
+        passDataToDetail(source: dataStore!, destination: &detailDataStore)
+        navigateToDetail(source: viewController!, destination: detailVC)
+    }
+    
+    // MARK: Navigation
+    
+    private func navigateToDetail(source: MainPageViewController, destination: MovieDetailViewController) {
+        
+        source.showDetailViewController(destination, sender: nil)
+    }
+    
+    // MARK: Passing data
+    
+    private func passDataToDetail(source: MainPageDataStore, destination: inout MovieDetailDataStore) {
+        
+        destination.movieID = source.movieID
+    }
 }

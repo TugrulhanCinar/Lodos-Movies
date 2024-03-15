@@ -60,7 +60,10 @@ class SplashScreenViewController: BaseViewController, SplashScreenDisplayLogic {
             if viewModel.isConnection {
                 interactor?.reload(request: SplashScreen.Reload.Request())
             } else {
-                showAlertMessage(title: "Internet connection", message: "You do not have an internet connection, connect to the internet to enter the application")
+                showAlertMessage(
+                    title: UIMessageConstant.internetConnectionTitle,
+                    message: UIMessageConstant.internetConnectionMSG
+                )
             }
         }
 

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -100,6 +101,65 @@
             </objects>
             <point key="canvasLocation" x="1450" y="-27"/>
         </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="FUB-MH-Kad">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="Dot-g2-jxX" customClass="MovieDetailViewController" customModule="Lodos_Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpR-TO-CRj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5aq-Ea-Mda">
+                                <rect key="frame" x="8" y="67" width="377" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="SkD-gL-WrD"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iIm-qn-uHe">
+                                <rect key="frame" x="8" y="325" width="377" height="493"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RKN-1l-Je0">
+                                <rect key="frame" x="186.66666666666666" y="182" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-gj-Mb0">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DWK-aD-TmJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RKN-1l-Je0" firstAttribute="centerX" secondItem="5aq-Ea-Mda" secondAttribute="centerX" id="4uk-d4-bf3"/>
+                            <constraint firstItem="iIm-qn-uHe" firstAttribute="trailing" secondItem="5aq-Ea-Mda" secondAttribute="trailing" id="Cr6-jR-Ba8"/>
+                            <constraint firstItem="5aq-Ea-Mda" firstAttribute="leading" secondItem="DWK-aD-TmJ" secondAttribute="leading" constant="8" id="KTK-a0-6lL"/>
+                            <constraint firstItem="5aq-Ea-Mda" firstAttribute="top" secondItem="DWK-aD-TmJ" secondAttribute="top" constant="8" id="QH6-7K-Jof"/>
+                            <constraint firstItem="RKN-1l-Je0" firstAttribute="centerY" secondItem="5aq-Ea-Mda" secondAttribute="centerY" id="Xcg-l7-Vvr"/>
+                            <constraint firstItem="DWK-aD-TmJ" firstAttribute="trailing" secondItem="5aq-Ea-Mda" secondAttribute="trailing" constant="8" id="bHb-KI-i05"/>
+                            <constraint firstItem="DWK-aD-TmJ" firstAttribute="bottom" secondItem="iIm-qn-uHe" secondAttribute="bottom" id="cpv-y4-Pco"/>
+                            <constraint firstItem="iIm-qn-uHe" firstAttribute="top" secondItem="5aq-Ea-Mda" secondAttribute="bottom" constant="8" id="dwu-dX-TLJ"/>
+                            <constraint firstItem="YHe-gj-Mb0" firstAttribute="centerY" secondItem="fpR-TO-CRj" secondAttribute="centerY" id="oWc-4S-N0C"/>
+                            <constraint firstItem="YHe-gj-Mb0" firstAttribute="centerX" secondItem="fpR-TO-CRj" secondAttribute="centerX" id="q11-Vl-Nc2"/>
+                            <constraint firstItem="iIm-qn-uHe" firstAttribute="leading" secondItem="5aq-Ea-Mda" secondAttribute="leading" id="vks-vv-FVz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="constraitImageHeight" destination="SkD-gL-WrD" id="3G9-B1-3nC"/>
+                        <outlet property="imageViewMovie" destination="5aq-Ea-Mda" id="2ME-h4-5l4"/>
+                        <outlet property="indicatorView" destination="RKN-1l-Je0" id="K7K-zA-136"/>
+                        <outlet property="labelNotFetchedMovie" destination="YHe-gj-Mb0" id="uJ6-Js-EKf"/>
+                        <outlet property="textViewMovieDetails" destination="iIm-qn-uHe" id="Tad-HL-TBy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCo-tq-3Ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285" y="-27"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5l3-UH-UFK">
             <objects>
@@ -119,4 +179,12 @@
             <point key="canvasLocation" x="-396.18320610687022" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

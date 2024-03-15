@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560AA6C12BA42F1400FA6777 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6BB2BA42F1400FA6777 /* MovieDetailPresenter.swift */; };
+		560AA6C22BA42F1400FA6777 /* MovieDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6BC2BA42F1400FA6777 /* MovieDetailWorker.swift */; };
+		560AA6C32BA42F1400FA6777 /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6BD2BA42F1400FA6777 /* MovieDetailRouter.swift */; };
+		560AA6C42BA42F1400FA6777 /* MovieDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6BE2BA42F1400FA6777 /* MovieDetailModels.swift */; };
+		560AA6C52BA42F1400FA6777 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6BF2BA42F1400FA6777 /* MovieDetailViewController.swift */; };
+		560AA6C62BA42F1400FA6777 /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6C02BA42F1400FA6777 /* MovieDetailInteractor.swift */; };
+		560AA6E42BA45F5400FA6777 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6E32BA45F5400FA6777 /* File.swift */; };
+		560AA6E72BA4604A00FA6777 /* RadiusConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6E62BA4604A00FA6777 /* RadiusConstant.swift */; };
+		560AA6E92BA460AB00FA6777 /* FontSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6E82BA460AB00FA6777 /* FontSizeConstant.swift */; };
+		560AA6EB2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6EA2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift */; };
+		560AA6ED2BA46C3700FA6777 /* Date+Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA6EC2BA46C3700FA6777 /* Date+Formatted.swift */; };
 		5630451E2BA1A9B300ABCD00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */; };
 		568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58A2BA0E619006FF777 /* AppDelegate.swift */; };
 		568DE58D2BA0E619006FF777 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DE58C2BA0E619006FF777 /* SceneDelegate.swift */; };
@@ -53,6 +64,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560AA6BB2BA42F1400FA6777 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		560AA6BC2BA42F1400FA6777 /* MovieDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailWorker.swift; sourceTree = "<group>"; };
+		560AA6BD2BA42F1400FA6777 /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
+		560AA6BE2BA42F1400FA6777 /* MovieDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModels.swift; sourceTree = "<group>"; };
+		560AA6BF2BA42F1400FA6777 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		560AA6C02BA42F1400FA6777 /* MovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractor.swift; sourceTree = "<group>"; };
+		560AA6E32BA45F5400FA6777 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		560AA6E62BA4604A00FA6777 /* RadiusConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusConstant.swift; sourceTree = "<group>"; };
+		560AA6E82BA460AB00FA6777 /* FontSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeConstant.swift; sourceTree = "<group>"; };
+		560AA6EA2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsHelper.swift; sourceTree = "<group>"; };
+		560AA6EC2BA46C3700FA6777 /* Date+Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatted.swift"; sourceTree = "<group>"; };
 		5630451D2BA1A9B300ABCD00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		568DE5872BA0E619006FF777 /* Lodos Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lodos Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568DE58A2BA0E619006FF777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +136,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560AA6BA2BA42EF600FA6777 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				560AA6BB2BA42F1400FA6777 /* MovieDetailPresenter.swift */,
+				560AA6BC2BA42F1400FA6777 /* MovieDetailWorker.swift */,
+				560AA6BD2BA42F1400FA6777 /* MovieDetailRouter.swift */,
+				560AA6BE2BA42F1400FA6777 /* MovieDetailModels.swift */,
+				560AA6BF2BA42F1400FA6777 /* MovieDetailViewController.swift */,
+				560AA6C02BA42F1400FA6777 /* MovieDetailInteractor.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		560AA6E22BA45F3E00FA6777 /* UIMessageConstant */ = {
+			isa = PBXGroup;
+			children = (
+				560AA6E32BA45F5400FA6777 /* File.swift */,
+			);
+			path = UIMessageConstant;
+			sourceTree = "<group>";
+		};
+		560AA6E52BA4601D00FA6777 /* UIConstant */ = {
+			isa = PBXGroup;
+			children = (
+				560AA6E62BA4604A00FA6777 /* RadiusConstant.swift */,
+				560AA6E82BA460AB00FA6777 /* FontSizeConstant.swift */,
+			);
+			path = UIConstant;
+			sourceTree = "<group>";
+		};
 		568DE57E2BA0E619006FF777 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +203,7 @@
 		56B15D082BA1FA3C00FCDFFE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				560AA6BA2BA42EF600FA6777 /* MovieDetail */,
 				56B15DB22BA21F2100FCDFFE /* MainPage */,
 				56B15D772BA1FE1100FCDFFE /* SplashScreen */,
 			);
@@ -231,6 +284,7 @@
 			children = (
 				56B15DC82BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift */,
 				56B15DA22BA20C3A00FCDFFE /* NetworkHelper.swift */,
+				560AA6EA2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -307,6 +361,7 @@
 				56DD6C0A2BA31573002FCBC0 /* CollectionExtensions.swift */,
 				56DD6C412BA3816E002FCBC0 /* UITableViewExtension.swift */,
 				56A206252BA3A4C600A1734B /* StringExtension.swift */,
+				560AA6EC2BA46C3700FA6777 /* Date+Formatted.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -415,6 +470,8 @@
 		56DD6C3D2BA36DFD002FCBC0 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				560AA6E52BA4601D00FA6777 /* UIConstant */,
+				560AA6E22BA45F3E00FA6777 /* UIMessageConstant */,
 				56DD6C3E2BA36E01002FCBC0 /* NetworkConstant */,
 			);
 			path = Constant;
@@ -574,27 +631,37 @@
 				56B15DC52BA231DF00FCDFFE /* ViewControllers.swift in Sources */,
 				56B15DC22BA2254A00FCDFFE /* Storyboards.swift in Sources */,
 				56B15DC92BA2360B00FCDFFE /* FirebaseRemoteControlHelper.swift in Sources */,
+				560AA6E92BA460AB00FA6777 /* FontSizeConstant.swift in Sources */,
+				560AA6C52BA42F1400FA6777 /* MovieDetailViewController.swift in Sources */,
 				56DD6C402BA36E11002FCBC0 /* NetworkConstant.swift in Sources */,
 				56B15DB92BA2208F00FCDFFE /* MainPagePresenter.swift in Sources */,
 				56B15D7E2BA1FE4800FCDFFE /* SplashScreenPresenter.swift in Sources */,
 				56DD6C252BA35C55002FCBC0 /* SearchBarTableViewCell.swift in Sources */,
 				56A206262BA3A4C600A1734B /* StringExtension.swift in Sources */,
+				560AA6E42BA45F5400FA6777 /* File.swift in Sources */,
+				560AA6C12BA42F1400FA6777 /* MovieDetailPresenter.swift in Sources */,
 				56DD6C322BA36974002FCBC0 /* MovieRepository.swift in Sources */,
 				56B15D832BA1FE4800FCDFFE /* SplashScreenInteractor.swift in Sources */,
 				56B15D822BA1FE4800FCDFFE /* SplashScreenViewController.swift in Sources */,
+				560AA6E72BA4604A00FA6777 /* RadiusConstant.swift in Sources */,
 				56B15DBA2BA2208F00FCDFFE /* MainPageWorker.swift in Sources */,
 				56DD6C2A2BA35E3E002FCBC0 /* TableViewCellEnum.swift in Sources */,
+				560AA6C42BA42F1400FA6777 /* MovieDetailModels.swift in Sources */,
 				56B15DA32BA20C3A00FCDFFE /* NetworkHelper.swift in Sources */,
 				56B15D812BA1FE4800FCDFFE /* SplashScreenModels.swift in Sources */,
 				56B15DBD2BA2208F00FCDFFE /* MainPageViewController.swift in Sources */,
+				560AA6C62BA42F1400FA6777 /* MovieDetailInteractor.swift in Sources */,
 				56B15D7F2BA1FE4800FCDFFE /* SplashScreenWorker.swift in Sources */,
+				560AA6EB2BA4679C00FA6777 /* FirebaseAnalyticsHelper.swift in Sources */,
 				568DE58B2BA0E619006FF777 /* AppDelegate.swift in Sources */,
 				56DD6C342BA3698C002FCBC0 /* Repository.swift in Sources */,
 				56B15DBE2BA2208F00FCDFFE /* MainPageInteractor.swift in Sources */,
 				56B15D1A2BA1FB8400FCDFFE /* BaseViewController.swift in Sources */,
+				560AA6C22BA42F1400FA6777 /* MovieDetailWorker.swift in Sources */,
 				56DD6C142BA31B8C002FCBC0 /* BaseTableViewCell.swift in Sources */,
 				56B15D802BA1FE4800FCDFFE /* SplashScreenRouter.swift in Sources */,
 				56DD6C382BA36A53002FCBC0 /* LoodosMoviesService.swift in Sources */,
+				560AA6C32BA42F1400FA6777 /* MovieDetailRouter.swift in Sources */,
 				56B15DBC2BA2208F00FCDFFE /* MainPageModels.swift in Sources */,
 				56B15DBB2BA2208F00FCDFFE /* MainPageRouter.swift in Sources */,
 				56DD6C0B2BA31573002FCBC0 /* CollectionExtensions.swift in Sources */,
@@ -604,6 +671,7 @@
 				56DD6C172BA31BBE002FCBC0 /* Presentation.swift in Sources */,
 				56DD6C112BA31618002FCBC0 /* MovieTableViewCell.swift in Sources */,
 				56DD6C1B2BA32072002FCBC0 /* LocaleImages.swift in Sources */,
+				560AA6ED2BA46C3700FA6777 /* Date+Formatted.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,8 +830,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -791,8 +858,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

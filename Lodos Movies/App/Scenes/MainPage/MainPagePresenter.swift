@@ -15,6 +15,7 @@ import UIKit
 protocol MainPagePresentationLogic {
     func presentInitializeResult(response: MainPage.Initialize.Response)
     func presentSearchResult(response: MainPage.Search.Response)
+    func presentSelectedMovie(response: MainPage.SelectedMovie.Response)
 }
 
 class MainPagePresenter: MainPagePresentationLogic {
@@ -38,6 +39,11 @@ extension MainPagePresenter {
                 results: response.results
             )
         )
+    }
+    
+    func presentSelectedMovie(response: MainPage.SelectedMovie.Response) {
+        
+        viewController?.displaySelectedMovieResult(viewModel: MainPage.SelectedMovie.ViewModel())
     }
 
 }

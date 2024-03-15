@@ -15,16 +15,18 @@ import UIKit
 protocol MainPageBusinessLogic {
     func initialize(request: MainPage.Initialize.Request)
     func search(request: MainPage.Search.Request)
+    func selectedMovie(request: MainPage.SelectedMovie.Request)
 }
 
 protocol MainPageDataStore {
-    //var name: String { get set }
+    var movieID: String { get set }
 }
 
 class MainPageInteractor: MainPageBusinessLogic, MainPageDataStore {
-
+    
     var presenter: MainPagePresentationLogic?
     var worker: MainPageWorker?
+    var movieID: String = ""
 
     init() {
         
@@ -47,6 +49,12 @@ extension MainPageInteractor {
             self.presenter?.presentSearchResult(response: MainPage.Search.Response(isContinue: false, results: movieRepository))
         })
         
+    }
+    
+    func selectedMovie(request: MainPage.SelectedMovie.Request) {
+        
+        movieID = request.movieID
+        presenter?.presentSelectedMovie(response: MainPage.SelectedMovie.Response())
     }
 
 }

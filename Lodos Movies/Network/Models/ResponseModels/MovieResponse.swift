@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - MovieResponse
 
@@ -35,17 +36,17 @@ struct Search: Codable {
     }
 }
 
-// MARK: - Rating
+// MARK: - MovieDetailResponse
 
 struct MovieDetailResponse: Codable {
-    var title, year, rated, released: String
-    var runtime, genre, director, writer: String
-    var actors, plot, language, country: String
-    var awards, poster: String
+    var title, year, rated, released: String?
+    var runtime, genre, director, writer: String?
+    var actors, plot, language, country: String?
+    var awards, poster: String?
     var ratings: [Rating]
-    var metascore, imdbRating, imdbVotes, imdbID: String
-    var type, dvd, boxOffice, production: String
-    var website, response: String
+    var metascore, imdbRating, imdbVotes, imdbID: String?
+    var type, dvd, boxOffice, production: String?
+    var response: String?
 
     enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -69,7 +70,6 @@ struct MovieDetailResponse: Codable {
         case dvd = "DVD"
         case boxOffice = "BoxOffice"
         case production = "Production"
-        case website = "Website"
         case response = "Response"
     }
 }
@@ -83,4 +83,56 @@ struct Rating: Codable {
         case source = "Source"
         case value = "Value"
     }
+}
+
+
+// MARK: - MovieDetailResponse
+
+extension MovieDetailResponse {
+    
+    func toAttributedString() -> NSAttributedString {
+        let attributedString = NSMutableAttributedString()
+
+        func append(key: String, value: String?) {
+            
+            guard let value = value else { return }
+            let boldAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: FontSizeConstant.mediumFontSize)]
+            let italicAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: FontSizeConstant.mediumFontSize)]
+
+            attributedString.append(NSAttributedString(string: "\n"))
+            let keyString = NSAttributedString(string: "\(key): ", attributes: boldAttributes)
+            let valueString = NSAttributedString(string: "\(value)\n", attributes: italicAttributes)
+
+            attributedString.append(keyString)
+            attributedString.append(valueString)
+            
+        }
+
+        append(key: MovieDetailResponseKeys.metascore, value: self.metascore)
+        append(key: MovieDetailResponseKeys.imdbRating, value: self.imdbRating)
+        append(key: MovieDetailResponseKeys.imdbVotes, value: self.imdbVotes)
+        append(key: MovieDetailResponseKeys.type, value: self.type)
+        append(key: MovieDetailResponseKeys.type, value: self.dvd)
+        append(key: MovieDetailResponseKeys.boxOffice, value: self.boxOffice)
+        append(key: MovieDetailResponseKeys.production, value: self.production)
+        append(key: MovieDetailResponseKeys.response, value: self.response)
+        self.ratings.forEach { rating in
+            append(key: rating.source, value: rating.value)
+        }
+
+
+        return attributedString
+    }
+}
+
+
+class MovieDetailResponseKeys {
+    static var metascore = "Metascore"
+    static var imdbRating = "IMDB Rating"
+    static var imdbVotes = "IMDB Votes"
+    static var type = "Type"
+    static var dvd = "DVD"
+    static var boxOffice = "Box Office"
+    static var production = "Production"
+    static var response = "Response"
 }
